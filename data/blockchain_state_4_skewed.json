@@ -1,0 +1,3010 @@
+[
+  {
+    "index": 0,
+    "transactions": [],
+    "previous_hash": "0",
+    "timestamp": 1767474133.8866649,
+    "hash": "b14cf7ad37d95b34e8f378f1c1113f8e9c86e6062800b0c72e59850cd7789c39",
+    "committee_votes": {}
+  },
+  {
+    "index": 1,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 16.444034576416016
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.952620550582651e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 3.602027654647827
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 6.337388038635254
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 1179.090087890625
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 70399.28125
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 17.222684860229492
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.6068581317085773e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.021512746810913
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 5.386491298675537
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 926.1959838867188
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 77061.7109375
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7677508592605591
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.016080452129244804
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.75404292345047
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.047736719250679016
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8715606331825256
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.018525347113609314
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8834851980209351
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.038732871413230896
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.20783054153434932,
+            "loss_reduction": 0.9870626635240141,
+            "robustness_score": 0.0006679148198000103,
+            "overall_score": 0.4780908649873054
+          },
+          "combined_score": 4.801851554759013
+        },
+        "local_epochs": 3,
+        "data_size": 341332,
+        "loss": 0.005549294887574565,
+        "timestamp": 1767474167.1416268,
+        "signature": "0764bf49e38137e7800bd89c4a071c7898235e9b85db8fec3e7e2054547cb418"
+      },
+      {
+        "client_id": 1,
+        "public_id": "client-1",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 12.105952262878418
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.5970934327924624e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 2.876096248626709
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 4.260254859924316
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 766.2208251953125
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 53298.31640625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 13.137895584106445
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.3936738469055854e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.9663639664649963
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 3.189195156097412
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 674.3237915039062
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 57133.671875
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7424532771110535
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0038736548740416765
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6883114576339722
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.043195080012083054
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6669186949729919
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0045019094832241535
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8016369342803955
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.020312530919909477
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.20710474206134677,
+            "loss_reduction": 0.9836155784338382,
+            "robustness_score": 0.0008927611719121719,
+            "overall_score": 0.47646668043245644
+          },
+          "combined_score": 5.116481893678836
+        },
+        "local_epochs": 3,
+        "data_size": 170666,
+        "loss": 0.006791226293154896,
+        "timestamp": 1767474167.143627,
+        "signature": "91e409414aadc4d067a963d16c8f856bef220dde653c690fc1b836263059c4f8"
+      },
+      {
+        "client_id": 2,
+        "public_id": "client-2",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 9.008909225463867
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.517080636403989e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.9464846849441528
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.6513638496398926
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 585.615966796875
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 43659.60546875
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 9.804228782653809
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0332321835448965e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8722176551818848
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.674184799194336
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 581.112060546875
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 45068.625
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7469860911369324
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.008189069107174873
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.715116024017334
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.047886718064546585
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.618833601474762
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.022983256727457047
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7527694702148438
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.014652762562036514
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.20630794810131192,
+            "loss_reduction": 0.9798313147608214,
+            "robustness_score": 0.0011108168270056028,
+            "overall_score": 0.47467786851025445
+          },
+          "combined_score": 5.048726114095034
+        },
+        "local_epochs": 3,
+        "data_size": 85332,
+        "loss": 0.008401847022330981,
+        "timestamp": 1767474167.1456292,
+        "signature": "b67157d81a00566c58441f70ddc69e8be9503937c7e5ce26863c4281f5f9b983"
+      },
+      {
+        "client_id": 3,
+        "public_id": "client-3",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 6.5977935791015625
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.5698071365477517e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.3072011470794678
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.5172704458236694
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 527.2499389648438
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 37691.64453125
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 7.25791597366333
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 9.74828981270548e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.6950879693031311
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8867766261100769
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 576.8853759765625
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 38018.328125
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7049879431724548
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.017203595489263535
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6620113849639893
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.03250706568360329
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5487986207008362
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.029206788167357445
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6914668083190918
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.005220033694058657
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.2054028264246881,
+            "loss_reduction": 0.9755325634495567,
+            "robustness_score": 0.0012997974931362607,
+            "overall_score": 0.4726341154483252
+          },
+          "combined_score": 4.6372736342683565
+        },
+        "local_epochs": 3,
+        "data_size": 42668,
+        "loss": 0.01057952109393394,
+        "timestamp": 1767474167.1476264,
+        "signature": "af3ca4b30a6683e51f0bf1c22a73759224cb630321ca8304cd58e541b648a735"
+      }
+    ],
+    "previous_hash": "b14cf7ad37d95b34e8f378f1c1113f8e9c86e6062800b0c72e59850cd7789c39",
+    "timestamp": 1767474167.1486263,
+    "hash": "15767b2e0a6f027179a6468f89f7659d91ff9ff0e0541afd858b20dd632807ec",
+    "committee_votes": {
+      "0": true,
+      "1": true
+    }
+  },
+  {
+    "index": 2,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 10.916505813598633
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0705674867494963e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.9393845796585083
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.558908224105835
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 881.07861328125
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 30538.869140625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 9.605045318603516
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.2528806109912694e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.382875919342041
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.71506929397583
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 725.08984375
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 34819.34375
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6622787117958069
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.013590279966592789
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8051717877388
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.015895841643214226
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7956627011299133
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.02827564999461174
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8221930861473083
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0021272040903568268
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.0007668521720916033,
+            "loss_reduction": 0.2523892695683678,
+            "robustness_score": 0.0014904097122974728,
+            "overall_score": 0.10156053063864327
+          },
+          "combined_score": 13.766157843956057
+        },
+        "local_epochs": 3,
+        "data_size": 341332,
+        "loss": 0.0037895983900481886,
+        "timestamp": 1767474200.7424316,
+        "signature": "211318a0e98ea5a9bdbc3b6c43faac3ed8a6af9bba03fcdea008f166adabda63"
+      },
+      {
+        "client_id": 1,
+        "public_id": "client-1",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 7.367019176483154
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 8.266310032922775e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.7011198401451111
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.7817171812057495
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 536.7101440429688
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 15835.2509765625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 6.384466171264648
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 8.774301932135131e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8386399745941162
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.866563081741333
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 423.89898681640625
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 17927.185546875
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3798218071460724
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.009348267689347267
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.4264766573905945
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.008684050291776657
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.43921539187431335
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.02617798000574112
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5090672373771667
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.009075045585632324
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.0004919676575809717,
+            "loss_reduction": 0.16191824482866576,
+            "robustness_score": 0.0028699516099931557,
+            "overall_score": 0.06553807531649733
+          },
+          "combined_score": 22.65970147413876
+        },
+        "local_epochs": 3,
+        "data_size": 170666,
+        "loss": 0.003951094526590883,
+        "timestamp": 1767474200.744938,
+        "signature": "3e16485107d839b5652dd36b0f4cd39a0cb0f8906faa8ef0f5d533cd56be1f5e"
+      }
+    ],
+    "previous_hash": "15767b2e0a6f027179a6468f89f7659d91ff9ff0e0541afd858b20dd632807ec",
+    "timestamp": 1767474200.744938,
+    "hash": "87342bc8846bc962550e00f27e39f95ce227e10fe2e4f7f148bc4e64e0bf3b18",
+    "committee_votes": {
+      "1": true,
+      "2": true
+    }
+  },
+  {
+    "index": 3,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 8.254697799682617
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0594352715997957e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.43765443563461304
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.2106776237487793
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 542.0667724609375
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 30826.888671875
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 7.491459369659424
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.6265887097688392e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.7789182066917419
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0703884363174438
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 516.8336181640625
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 29286.876953125
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5141756534576416
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0193848367780447
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5845929980278015
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.00900886207818985
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6069880127906799
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.009813796728849411
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.569346010684967
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0011039003729820251
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.00021668407134711742,
+            "loss_reduction": 0.09379755604213294,
+            "robustness_score": 0.0016314750895316038,
+            "overall_score": 0.037931991063298344
+          },
+          "combined_score": 16.400615440359907
+        },
+        "local_epochs": 3,
+        "data_size": 341332,
+        "loss": 0.0034295059290945385,
+        "timestamp": 1767474234.317014,
+        "signature": "8691e1c69c81b94b16a0210a975e543ddf099f212604263f93ed80f0837a8b6c"
+      },
+      {
+        "client_id": 1,
+        "public_id": "client-1",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 5.72989559173584
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 9.163205504592042e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.28032273054122925
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.7364708781242371
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 335.79412841796875
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 13991.78125
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 5.136796951293945
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0312084668839816e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.4601909816265106
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.704261302947998
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 313.6570739746094
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 14392.3935546875
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.28789442777633667
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.012210080400109291
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.35285478830337524
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0025360099971294403
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.364827960729599
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.005347017198801041
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.34131288528442383
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0063947513699531555
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 9.903870522975922e-05,
+            "loss_reduction": 0.04287158002143661,
+            "robustness_score": 0.0034307615471989707,
+            "overall_score": 0.017874399800106345
+          },
+          "combined_score": 29.438367436191566
+        },
+        "local_epochs": 3,
+        "data_size": 170666,
+        "loss": 0.0034800093864900124,
+        "timestamp": 1767474234.319014,
+        "signature": "11f31049093aa17cb69b188272771aabc49d171626d52100f6b5c772f325753a"
+      }
+    ],
+    "previous_hash": "87342bc8846bc962550e00f27e39f95ce227e10fe2e4f7f148bc4e64e0bf3b18",
+    "timestamp": 1767474234.319014,
+    "hash": "ea21d8a2f73b2c29c751ac624ab40137bb030df5e229809b64e81bf634ae1ed5",
+    "committee_votes": {
+      "0": true,
+      "1": true
+    }
+  },
+  {
+    "index": 4,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 11.245814323425293
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.1158941308385693e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.5154879093170166
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.3693140745162964
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 751.0320434570312
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 58005.86328125
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 10.137609481811523
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.4993070837808773e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8535693287849426
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.9718242883682251
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 694.1818237304688
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 56210.69921875
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6098241209983826
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0038653090596199036
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7175388932228088
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.001923542469739914
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6694800853729248
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 6.970018148422241e-05
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7773279547691345
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.010259570553898811
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.00015774881467223167,
+            "loss_reduction": 0.0760848243595367,
+            "robustness_score": 0.0008636349715680708,
+            "overall_score": 0.03066975626399719
+          },
+          "combined_score": 9.98977183683165
+        },
+        "local_epochs": 3,
+        "data_size": 341332,
+        "loss": 0.0031905790668461877,
+        "timestamp": 1767474300.9490721,
+        "signature": "e0849b7e655d383e8eeb341bb4cd73f26b0c40e5f83172e76158528e551e77e6"
+      }
+    ],
+    "previous_hash": "ea21d8a2f73b2c29c751ac624ab40137bb030df5e229809b64e81bf634ae1ed5",
+    "timestamp": 1767474300.9490721,
+    "hash": "b315431b4068a5ab00642b8dcd80863f15b9a948df325a2011e106cc8d9e48d2",
+    "committee_votes": {
+      "0": true,
+      "1": true
+    }
+  },
+  {
+    "index": 5,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 9.456958770751953
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.2398162400349975e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.3839866816997528
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8282297253608704
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 561.7581787109375
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 54159.9375
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 8.045543670654297
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.5335564714623615e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.5695066452026367
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.5691692233085632
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 486.0120544433594
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 54434.98046875
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3459329903125763
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.00015873461961746216
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.39861464500427246
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0010776780545711517
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.44708359241485596
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.009847812354564667
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5706595778465271
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.015762314200401306
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.00010781921446323395,
+            "loss_reduction": 0.056285431585544214,
+            "robustness_score": 0.0009110427703411302,
+            "overall_score": 0.022739508874071206
+          },
+          "combined_score": 10.77579989899812
+        },
+        "local_epochs": 3,
+        "data_size": 341332,
+        "loss": 0.003104960899653979,
+        "timestamp": 1767474367.677607,
+        "signature": "224f7ffcf717939f2e9d90d77439411ce4bd625c4ff8e11c1124b28077683d20"
+      }
+    ],
+    "previous_hash": "b315431b4068a5ab00642b8dcd80863f15b9a948df325a2011e106cc8d9e48d2",
+    "timestamp": 1767474367.677607,
+    "hash": "aaf0dfbedc22a8d89859e5ecf064a9d9d8a827b704cfb40ad3fe6f574c73e7e4",
+    "committee_votes": {
+      "0": true,
+      "1": true
+    }
+  },
+  {
+    "index": 6,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 16.444034576416016
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.952620550582651e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 3.602027654647827
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 6.337388038635254
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 1179.090087890625
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 70399.28125
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 17.222684860229492
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.6068581317085773e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.021512746810913
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 5.386491298675537
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 926.1959838867188
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 77061.7109375
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7677508592605591
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.016080452129244804
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.75404292345047
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.047736719250679016
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8715606331825256
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.018525347113609314
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8834851980209351
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.038732871413230896
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.20783054153434932,
+            "loss_reduction": 0.9870626635240141,
+            "robustness_score": 0.0006679148198000103,
+            "overall_score": 0.4780908649873054
+          },
+          "combined_score": 4.801851554759013
+        },
+        "local_epochs": 3,
+        "data_size": 341332,
+        "loss": 0.005549294887574565,
+        "timestamp": 1767475968.6795104,
+        "signature": "2bcd8f9454f54d2d3de16654ebf453b9a6cb04413b655eeaa39e6b979ca2f4ef"
+      },
+      {
+        "client_id": 1,
+        "public_id": "client-1",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 12.105952262878418
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.5970934327924624e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 2.876096248626709
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 4.260254859924316
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 766.2208251953125
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 53298.31640625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 13.137895584106445
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.3936738469055854e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.9663639664649963
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 3.189195156097412
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 674.3237915039062
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 57133.671875
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7424532771110535
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0038736548740416765
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6883114576339722
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.043195080012083054
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6669186949729919
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0045019094832241535
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8016369342803955
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.020312530919909477
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.20710474206134677,
+            "loss_reduction": 0.9836155784338382,
+            "robustness_score": 0.0008927611719121719,
+            "overall_score": 0.47646668043245644
+          },
+          "combined_score": 5.116481893678836
+        },
+        "local_epochs": 3,
+        "data_size": 170666,
+        "loss": 0.006791226293154896,
+        "timestamp": 1767475968.6815104,
+        "signature": "cb580871f9d92d1947e1c21e036589e06b8bbc7fa3dc2544faf5991fcf052d2e"
+      },
+      {
+        "client_id": 2,
+        "public_id": "client-2",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 9.008909225463867
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.517080636403989e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.9464846849441528
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.6513638496398926
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 585.615966796875
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 43659.60546875
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 9.804228782653809
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0332321835448965e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8722176551818848
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.674184799194336
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 581.112060546875
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 45068.625
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7469860911369324
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.008189069107174873
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.715116024017334
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.047886718064546585
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.618833601474762
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.022983256727457047
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7527694702148438
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.014652762562036514
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.20630794810131192,
+            "loss_reduction": 0.9798313147608214,
+            "robustness_score": 0.0011108168270056028,
+            "overall_score": 0.47467786851025445
+          },
+          "combined_score": 5.048726114095034
+        },
+        "local_epochs": 3,
+        "data_size": 85332,
+        "loss": 0.008401847022330981,
+        "timestamp": 1767475968.6835098,
+        "signature": "8210b0859b7cbd815adfeb926304406e4c3e756c996913c73255396d7c5c2c83"
+      },
+      {
+        "client_id": 3,
+        "public_id": "client-3",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 6.5977935791015625
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.5698071365477517e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.3072011470794678
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.5172704458236694
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 527.2499389648438
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 37691.64453125
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 7.25791597366333
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 9.74828981270548e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.6950879693031311
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8867766261100769
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 576.8853759765625
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 38018.328125
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7049879431724548
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.017203595489263535
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6620113849639893
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.03250706568360329
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5487986207008362
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.029206788167357445
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6914668083190918
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.005220033694058657
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.2054028264246881,
+            "loss_reduction": 0.9755325634495567,
+            "robustness_score": 0.0012997974931362607,
+            "overall_score": 0.4726341154483252
+          },
+          "combined_score": 4.6372736342683565
+        },
+        "local_epochs": 3,
+        "data_size": 42668,
+        "loss": 0.01057952109393394,
+        "timestamp": 1767475968.685513,
+        "signature": "e63957b346f41c9b6c13fa7d3b7dcde184a1b1a06314234ed393fb2d5f009aa7"
+      }
+    ],
+    "previous_hash": "aaf0dfbedc22a8d89859e5ecf064a9d9d8a827b704cfb40ad3fe6f574c73e7e4",
+    "timestamp": 1767475968.6865108,
+    "hash": "ff0e84cc8a58e58c2c60cf19b32f7bcdff3337f1d5a89dcc53a9578ae689fc3f",
+    "committee_votes": {
+      "0": true,
+      "1": true
+    }
+  },
+  {
+    "index": 7,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 10.826047897338867
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.3127582860761322e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8534537553787231
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.390385627746582
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 873.286865234375
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 31265.892578125
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 9.471653938293457
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.2453864655981306e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.3632855415344238
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.5483362674713135
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 713.8485717773438
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 35232.8828125
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6527851223945618
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.013091858476400375
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8071513175964355
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.015977613627910614
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7888085842132568
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.025484055280685425
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8113904595375061
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.005234029144048691
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.0007060235366225243,
+            "loss_reduction": 0.23793732701356088,
+            "robustness_score": 0.0014659213466499043,
+            "overall_score": 0.09575052448940334
+          },
+          "combined_score": 13.664789048352182
+        },
+        "local_epochs": 3,
+        "data_size": 341332,
+        "loss": 0.003762085691938071,
+        "timestamp": 1767476001.4619238,
+        "signature": "a2c53a3a1cb76f037c67213005bb5beba0ffc2dde0d621bcd287af6b9933282b"
+      },
+      {
+        "client_id": 1,
+        "public_id": "client-1",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 7.302083492279053
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 9.557054909237195e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.6135596036911011
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.6144325733184814
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 525.888427734375
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 16766.998046875
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 6.297058582305908
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 9.088601473195013e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8278990983963013
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.7397993803024292
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 425.937744140625
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 18465.974609375
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3739086389541626
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.009035080671310425
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.4272632896900177
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.01042969897389412
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.43232330679893494
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.02559582144021988
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.49981367588043213
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.006322063505649567
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.00044249254278838634,
+            "loss_reduction": 0.14912462176284824,
+            "robustness_score": 0.0027544431779545453,
+            "overall_score": 0.06037773435784556
+          },
+          "combined_score": 22.156062168377396
+        },
+        "local_epochs": 3,
+        "data_size": 170666,
+        "loss": 0.003912716169842984,
+        "timestamp": 1767476001.463924,
+        "signature": "7c424ca211af84e3ac399c02504b5fac13f6838f6f505df3e3f1398b1dce37c3"
+      }
+    ],
+    "previous_hash": "ff0e84cc8a58e58c2c60cf19b32f7bcdff3337f1d5a89dcc53a9578ae689fc3f",
+    "timestamp": 1767476001.463924,
+    "hash": "6bab85a52dbbd3621be09614debfec8e3b4d781d70da8ae7f4124de86768538c",
+    "committee_votes": {
+      "1": true,
+      "2": true
+    }
+  },
+  {
+    "index": 8,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 8.208078384399414
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.1249050658079796e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.44105830788612366
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.1832093000411987
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 519.474853515625
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 30711.91015625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 7.458908557891846
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.6784097169875167e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.7630079388618469
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0209095478057861
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 514.83642578125
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 29401.896484375
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5129837989807129
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.014854827895760536
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5691759586334229
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.006016738712787628
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5954285860061646
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.009158309549093246
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5594243407249451
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0017562732100486755
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.00020654406398534775,
+            "loss_reduction": 0.09002477614003174,
+            "robustness_score": 0.0016321344576599593,
+            "overall_score": 0.03641895497313883
+          },
+          "combined_score": 16.444755029121605
+        },
+        "local_epochs": 3,
+        "data_size": 341332,
+        "loss": 0.00342128649812018,
+        "timestamp": 1767476034.3552256,
+        "signature": "c48dc6036044a4256e4fd26131e610b6156c2c23574a9e44c3e924e5f4cfc964"
+      },
+      {
+        "client_id": 1,
+        "public_id": "client-1",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 5.692257404327393
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 9.630164640839212e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.2718238830566406
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.6958292126655579
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 320.65234375
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 13787.275390625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 5.130638599395752
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 8.288872777484357e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.4496464133262634
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.6783703565597534
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 312.62567138671875
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 14649.224609375
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.27540236711502075
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.009832276031374931
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3447020947933197
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0023111850023269653
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3582633137702942
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.004221338778734207
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3328598439693451
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.005330348387360573
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 9.31138638406992e-05,
+            "loss_reduction": 0.04058482527189452,
+            "robustness_score": 0.0034265316215387072,
+            "overall_score": 0.01695648197860183
+          },
+          "combined_score": 29.498693105304856
+        },
+        "local_epochs": 3,
+        "data_size": 170666,
+        "loss": 0.0034696250249385487,
+        "timestamp": 1767476034.3562262,
+        "signature": "3a7a81770ecf86097afdb7bbd906c0e9e56ad5db2e5b1c6782c499d52bb9def7"
+      }
+    ],
+    "previous_hash": "6bab85a52dbbd3621be09614debfec8e3b4d781d70da8ae7f4124de86768538c",
+    "timestamp": 1767476034.3562262,
+    "hash": "3cb3b3b3dc330f7def9aef8bfa8ce1c8fca072f5a7658bf3c715eaaa8f284ac4",
+    "committee_votes": {
+      "0": true,
+      "1": true
+    }
+  },
+  {
+    "index": 9,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 11.211410522460938
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.9462002455838956e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.5364207625389099
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.3486828804016113
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 732.2505493164062
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 58083.7578125
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 10.159314155578613
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.1571473553194664e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8313957452774048
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.9822423458099365
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 693.4956665039062
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 55996.41015625
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6151747703552246
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0046279095113277435
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7194218635559082
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0011726319789886475
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6632670164108276
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0021935105323791504
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8068709373474121
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.013023437932133675
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.00015557592269033194,
+            "loss_reduction": 0.0752305635930003,
+            "robustness_score": 0.0008647989760152969,
+            "overall_score": 0.030327415601479318
+          },
+          "combined_score": 10.009641519170547
+        },
+        "local_epochs": 3,
+        "data_size": 341332,
+        "loss": 0.0031881208589817096,
+        "timestamp": 1767476099.183695,
+        "signature": "7dac15435cf72f0f405541d528986eab054533284a1519e66024acc2517134a2"
+      }
+    ],
+    "previous_hash": "3cb3b3b3dc330f7def9aef8bfa8ce1c8fca072f5a7658bf3c715eaaa8f284ac4",
+    "timestamp": 1767476099.183695,
+    "hash": "28512735669f4f50df51b5007271bf713c646f727b83977cff3018e2c66293ab",
+    "committee_votes": {
+      "0": true,
+      "1": true
+    }
+  },
+  {
+    "index": 10,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 9.406041145324707
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.3096434233593754e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.3677390217781067
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8543598651885986
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 568.881103515625
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 51625.44140625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 7.963008880615234
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.8619788281503133e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.5591765642166138
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.4938298165798187
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 483.97821044921875
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 54264.77734375
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.34105318784713745
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.001513700932264328
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.4426533579826355
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.002397596836090088
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.45989352464675903
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0059784092009067535
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5430843830108643
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.008315416052937508
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.00010708230547606945,
+            "loss_reduction": 0.05599331435960151,
+            "robustness_score": 0.0009340161737233706,
+            "overall_score": 0.02262696190077571
+          },
+          "combined_score": 11.0299595768848
+        },
+        "local_epochs": 3,
+        "data_size": 341332,
+        "loss": 0.003103322121576024,
+        "timestamp": 1767476164.0669243,
+        "signature": "73486e3f6f0d212925385e47484d44d3b4e2e7ad09d0049b74198efe95b103f4"
+      }
+    ],
+    "previous_hash": "28512735669f4f50df51b5007271bf713c646f727b83977cff3018e2c66293ab",
+    "timestamp": 1767476164.0669243,
+    "hash": "44dff4d2747002c3cd02ccd7a0734d8822237353869e1ffb620dd1ebc56cff36",
+    "committee_votes": {
+      "0": true,
+      "1": true
+    }
+  }
+]

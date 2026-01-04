@@ -137,6 +137,18 @@ class EnhancedCommitteeConsensus(CommitteeConsensus):
         else:
             score = 0.0
             accepted = False
+        # #region agent log
+        import json
+        import time
+        import os
+        try:
+            log_path = r'c:\Users\user\Desktop\FederatedBlockchainLearning\.cursor\debug.log'
+            os.makedirs(os.path.dirname(log_path), exist_ok=True)
+            with open(log_path, 'a', encoding='utf-8') as f:
+                f.write(json.dumps({"id": f"log_{int(time.time()*1000)}", "timestamp": int(time.time()*1000), "location": "consensus.py:131", "message": "Committee validation check", "data": {"loss": loss, "loss_threshold": loss_threshold, "update_norm": update_norm, "norm_threshold": norm_threshold, "accepted": accepted, "score": score}, "sessionId": "debug-session", "runId": "run1", "hypothesisId": "C"}) + '\n')
+        except Exception as e:
+            print(f"DEBUG LOG ERROR: {e}")
+        # #endregion
         
         return accepted, score
     

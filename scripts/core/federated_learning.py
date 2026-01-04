@@ -206,14 +206,31 @@ class EnhancedBlockchainFederatedLearning:
                 print(f"⚠️ Client {client_id} rejected: not PoP registered")
         
         # Step 1.5: Trust threshold filter BEFORE PoC evaluation (Bootstrapping with Probation)
-        # New nodes start with trust=0.5 (above threshold=0.45) to allow first participation
-        # This enables validation of their contributions before penalizing
+        # New nodes start with trust=0.3 (below threshold=0.45) to prevent Sybil attacks in Round 1
+        # Probationary nodes (0.3 <= trust < 0.45) can participate but with reduced weight
+        # Nodes with trust < 0.3 are completely blocked
+        PROBATIONARY_TRUST_THRESHOLD = 0.3  # Minimum trust to participate at all
         trust_filtered_updates = []
         trust_rejected_early = []
         for update_info, metrics in pop_verified_updates:
             client_id = update_info["client_id"]
             trust_score = self.proof_of_personhood.get_trust_score(client_id)
-            if trust_score >= self.trust_threshold:
+            # #region agent log
+            import json
+            import time
+            import os
+            try:
+                log_path = r'c:\Users\user\Desktop\FederatedBlockchainLearning\.cursor\debug.log'
+                os.makedirs(os.path.dirname(log_path), exist_ok=True)
+                passed = trust_score >= PROBATIONARY_TRUST_THRESHOLD
+                with open(log_path, 'a', encoding='utf-8') as f:
+                    f.write(json.dumps({"id": f"log_{int(time.time()*1000)}", "timestamp": int(time.time()*1000), "location": "federated_learning.py:215", "message": "Trust check before PoC", "data": {"client_id": client_id, "trust_score": trust_score, "trust_threshold": self.trust_threshold, "probationary_threshold": PROBATIONARY_TRUST_THRESHOLD, "is_sybil": client_id in self.sybil_clients, "passed": passed, "is_probationary": PROBATIONARY_TRUST_THRESHOLD <= trust_score < self.trust_threshold}, "sessionId": "debug-session", "runId": "run1", "hypothesisId": "A"}) + '\n')
+            except Exception as e:
+                print(f"DEBUG LOG ERROR: {e}")
+            # #endregion
+            if trust_score >= PROBATIONARY_TRUST_THRESHOLD:
+                # Allow probationary participation (trust >= 0.3 but < 0.45)
+                # These nodes will have reduced weight in aggregation (trust^2 scaling)
                 trust_filtered_updates.append((update_info, metrics))
             else:
                 trust_rejected_early.append((client_id, trust_score))
@@ -221,7 +238,7 @@ class EnhancedBlockchainFederatedLearning:
                 # Only penalize if update passes filters and is bad
         
         if trust_rejected_early:
-            print(f"  🛡️ Trust filter: Rejected {len(trust_rejected_early)} updates before PoC (trust < {self.trust_threshold}): {[(cid, f'{score:.3f}') for cid, score in trust_rejected_early]} [No penalty - administrative rejection]")
+            print(f"  🛡️ Trust filter: Rejected {len(trust_rejected_early)} updates before PoC (trust < {PROBATIONARY_TRUST_THRESHOLD}): {[(cid, f'{score:.3f}') for cid, score in trust_rejected_early]} [No penalty - administrative rejection]")
         
         # Step 2: PoC evaluation - evaluate contribution of each update (only trust-filtered)
         poc_contributions = {}
@@ -243,6 +260,18 @@ class EnhancedBlockchainFederatedLearning:
                 device=self.device
             )
             poc_contributions[client_id] = contribution
+            # #region agent log
+            import json
+            import time
+            import os
+            try:
+                log_path = r'c:\Users\user\Desktop\FederatedBlockchainLearning\.cursor\debug.log'
+                os.makedirs(os.path.dirname(log_path), exist_ok=True)
+                with open(log_path, 'a', encoding='utf-8') as f:
+                    f.write(json.dumps({"id": f"log_{int(time.time()*1000)}", "timestamp": int(time.time()*1000), "location": "federated_learning.py:245", "message": "PoC evaluation result", "data": {"client_id": client_id, "overall_score": contribution.get('overall_score', 0.0), "poc_threshold": self.poc_threshold, "is_sybil": client_id in self.sybil_clients, "passed_threshold": self.proof_of_contribution.meets_threshold(contribution.get('overall_score', 0.0), self.poc_threshold)}, "sessionId": "debug-session", "runId": "run1", "hypothesisId": "B"}) + '\n')
+            except Exception as e:
+                print(f"DEBUG LOG ERROR: {e}")
+            # #endregion
         
         # Step 3: Filter by PoC threshold and rank
         threshold_met = {
@@ -306,6 +335,18 @@ class EnhancedBlockchainFederatedLearning:
                     print(f"  ⚠️ Client {client_id}: Rejected (loss={metrics['loss']:.4f}, norm={metrics['update_norm']:.2f}, votes=0/{len(votes)})")
             
             accepted, consensus_ratio = self.committee.aggregate_votes(votes)
+            # #region agent log
+            import json
+            import time
+            import os
+            try:
+                log_path = r'c:\Users\user\Desktop\FederatedBlockchainLearning\.cursor\debug.log'
+                os.makedirs(os.path.dirname(log_path), exist_ok=True)
+                with open(log_path, 'a', encoding='utf-8') as f:
+                    f.write(json.dumps({"id": f"log_{int(time.time()*1000)}", "timestamp": int(time.time()*1000), "location": "federated_learning.py:308", "message": "Committee validation result", "data": {"client_id": client_id, "accepted": accepted, "consensus_ratio": consensus_ratio, "loss": metrics.get('loss', 0.0), "update_norm": metrics.get('update_norm', 0.0), "is_sybil": client_id in self.sybil_clients, "votes_count": len(votes), "positive_votes": sum(1 for v in votes.values() if v)}, "sessionId": "debug-session", "runId": "run1", "hypothesisId": "C"}) + '\n')
+            except Exception as e:
+                print(f"DEBUG LOG ERROR: {e}")
+            # #endregion
             if accepted and scores:
                 median_score = np.median(scores)
                 validation_scores[client_id] = median_score
@@ -362,13 +403,28 @@ class EnhancedBlockchainFederatedLearning:
                     current_trust = self.proof_of_personhood.get_trust_score(client_id)
                     new_trust = max(0.0, current_trust - 0.15)  # Strong penalty for validated bad update
                     self.proof_of_personhood.update_trust_score(client_id, new_trust)
+                    # #region agent log
+                    import json
+                    import time
+                    import os
+                    try:
+                        log_path = r'c:\Users\user\Desktop\FederatedBlockchainLearning\.cursor\debug.log'
+                        os.makedirs(os.path.dirname(log_path), exist_ok=True)
+                        with open(log_path, 'a', encoding='utf-8') as f:
+                            f.write(json.dumps({"id": f"log_{int(time.time()*1000)}", "timestamp": int(time.time()*1000), "location": "federated_learning.py:363", "message": "Sybil trust penalty applied", "data": {"client_id": client_id, "old_trust": current_trust, "new_trust": new_trust, "penalty": 0.15}, "sessionId": "debug-session", "runId": "run1", "hypothesisId": "D"}) + '\n')
+                    except Exception as e:
+                        print(f"DEBUG LOG ERROR: {e}")
+                    # #endregion
                     # Remove probation status if in probation
                     if client_id in self.proof_of_personhood.registered_nodes:
                         self.proof_of_personhood.registered_nodes[client_id]["probation"] = False
                 else:
                     # Honest update passed all filters and was accepted - REWARD
                     current_trust = self.proof_of_personhood.get_trust_score(client_id)
-                    new_trust = min(1.0, current_trust + 0.02)  # Reward for good contribution
+                    # Larger reward for nodes in probation to help them reach trust threshold faster
+                    reward = 0.05 if (client_id in self.proof_of_personhood.registered_nodes and 
+                                     self.proof_of_personhood.registered_nodes[client_id].get("probation", False)) else 0.02
+                    new_trust = min(1.0, current_trust + reward)
                     self.proof_of_personhood.update_trust_score(client_id, new_trust)
                     # Remove probation status after successful contribution
                     if client_id in self.proof_of_personhood.registered_nodes:
@@ -467,12 +523,18 @@ class EnhancedBlockchainFederatedLearning:
             trust_score = self.proof_of_personhood.get_trust_score(cid)
             
             # Enhanced trust weighting: Use exponential scaling for stronger mitigation
+            # Probationary nodes (trust < 0.45) get cubic scaling for minimal impact
             # trust=1.0 → weight=1.0 (100%)
-            # trust=0.5 → weight=0.5 (50%) - probation/new nodes
-            # trust=0.4 → weight=0.16 (16%) - low trust nodes contribute minimally
-            # trust=0.3 → weight=0.09 (9%) - very low trust
+            # trust=0.5 → weight=0.25 (25%) - trusted nodes
+            # trust=0.4 → weight=0.064 (6.4%) - probationary
+            # trust=0.3 → weight=0.027 (2.7%) - probationary (minimal Sybil impact)
             # This ensures low-trust nodes contribute minimally until they prove themselves
-            trust_weight = max(0.0, min(1.0, trust_score ** 2))  # Quadratic scaling for stronger mitigation
+            if trust_score < self.trust_threshold:
+                # Probationary nodes: use cubic scaling for even lower weight (limits Sybil impact)
+                trust_weight = max(0.0, min(1.0, trust_score ** 3))
+            else:
+                # Trusted nodes: use quadratic scaling
+                trust_weight = max(0.0, min(1.0, trust_score ** 2))
             base *= trust_weight
             
             # Apply staleness penalty

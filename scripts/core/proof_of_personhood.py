@@ -56,11 +56,23 @@ class ProofOfPersonhood:
             if challenge_completed:
                 self.registered_nodes[node_id] = {
                     "registration_time": time.time(),
-                    "trust_score": 0.5,  # Bootstrapping: Initial trust allows first participation (probation period)
+                    "trust_score": 0.3,  # Lower initial trust: below threshold 0.45, requires good behavior to participate
                     "verification_method": verification_method,
                     "verified": True,
                     "probation": True  # Mark as in probation period
                 }
+                # #region agent log
+                import json
+                import os
+                try:
+                    log_path = r'c:\Users\user\Desktop\FederatedBlockchainLearning\.cursor\debug.log'
+                    os.makedirs(os.path.dirname(log_path), exist_ok=True)
+                    initial_trust = self.registered_nodes[node_id]["trust_score"]
+                    with open(log_path, 'a', encoding='utf-8') as f:
+                        f.write(json.dumps({"id": f"log_{int(time.time()*1000)}", "timestamp": int(time.time()*1000), "location": "proof_of_personhood.py:57", "message": "Node registered with initial trust", "data": {"node_id": node_id, "initial_trust": initial_trust, "probation": True}, "sessionId": "debug-session", "runId": "run1", "hypothesisId": "A"}) + '\n')
+                except Exception as e:
+                    print(f"DEBUG LOG ERROR: {e}")
+                # #endregion
                 return True, token
             else:
                 return False, "Challenge verification failed"

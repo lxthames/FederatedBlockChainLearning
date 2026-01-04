@@ -234,6 +234,17 @@ def main():
                 adaptive_threshold = min(get_adaptive_poc_threshold(round_num), 0.02)
                 fl_system.poc_threshold = adaptive_threshold
                 print(f"PoC threshold: {adaptive_threshold:.4f}")
+                # #region agent log
+                import json
+                import time
+                try:
+                    log_path = r'c:\Users\user\Desktop\FederatedBlockchainLearning\.cursor\debug.log'
+                    os.makedirs(os.path.dirname(log_path), exist_ok=True)
+                    with open(log_path, 'a', encoding='utf-8') as f:
+                        f.write(json.dumps({"id": f"log_{int(time.time()*1000)}", "timestamp": int(time.time()*1000), "location": "run.py:234", "message": "Round start", "data": {"round_num": round_num, "poc_threshold": adaptive_threshold, "trust_threshold": fl_system.trust_threshold, "sybil_clients": sybil_clients}, "sessionId": "debug-session", "runId": "run1", "hypothesisId": "E"}) + '\n')
+                except Exception as e:
+                    print(f"DEBUG LOG ERROR: {e}")
+                # #endregion
                 
                 # Start new round in metrics logger
                 if metrics_logger is not None:

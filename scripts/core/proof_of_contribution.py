@@ -104,6 +104,18 @@ class ProofOfContribution:
             0.4 * loss_reduction +
             0.2 * robustness_score
         )
+        # #region agent log
+        import json
+        import time
+        import os
+        try:
+            log_path = r'c:\Users\user\Desktop\FederatedBlockchainLearning\.cursor\debug.log'
+            os.makedirs(os.path.dirname(log_path), exist_ok=True)
+            with open(log_path, 'a', encoding='utf-8') as f:
+                f.write(json.dumps({"id": f"log_{int(time.time()*1000)}", "timestamp": int(time.time()*1000), "location": "proof_of_contribution.py:106", "message": "PoC score calculation", "data": {"client_id": client_id, "accuracy_improvement": accuracy_improvement, "loss_reduction": loss_reduction, "robustness_score": robustness_score, "overall_score": overall_score, "global_loss": global_loss, "local_loss": local_loss, "update_norm": update_norm}, "sessionId": "debug-session", "runId": "run1", "hypothesisId": "B"}) + '\n')
+        except Exception as e:
+            print(f"DEBUG LOG ERROR: {e}")
+        # #endregion
         
         # Record contribution
         if client_id not in self.contribution_history:
