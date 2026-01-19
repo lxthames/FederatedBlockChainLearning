@@ -2,7 +2,7 @@
 MetricsLogger: Centralized logging system for tracking Model Utility, Security, and Consensus Efficiency
 
 Tracks metrics over T training rounds:
-- Global Performance (test accuracy, test loss)
+- Global Performance (test recall, test loss)
 - Security (trust scores, attack success rate)
 - Consensus Efficiency (committee participation, staleness)
 """
@@ -38,7 +38,7 @@ class MetricsLogger:
         # ====================================================================
         # Global Performance Metrics
         # ====================================================================
-        self.test_accuracy_history: List[float] = []
+        self.test_recall_history: List[float] = []  # Changed from test_accuracy_history
         self.test_loss_history: List[float] = []
         
         # ====================================================================
@@ -78,20 +78,24 @@ class MetricsLogger:
         """
         self.sybil_clients = set(sybil_client_ids)
     
-    def log_global_performance(self, model, device, criterion=None, batch_size: int = 256):
+    def log_global_performance(self, model, device, criterion=None, batch_size: int = 256, top_k: int = None):
         """
-        Evaluate global model on test set and log accuracy/loss.
+        Evaluate global model on test set and log recall/loss for retrieval problem.
         Called after global model update (Equation 12).
+        
+        For SIFT retrieval: compares predicted top-k clients vs ground truth relevant clients.
+        Recall = (relevant clients in predicted top-k) / (total relevant clients)
         
         Args:
             model: Global model to evaluate
             device: Device for evaluation
             criterion: Loss function (default: MSELoss)
             batch_size: Batch size for evaluation
+            top_k: Number of top clients to retrieve (default: number of clients with GT > 0)
         """
         if self.test_data is None:
             # No test data available
-            self.test_accuracy_history.append(0.0)
+            self.test_recall_history.append(0.0)
             self.test_loss_history.append(0.0)
             return
         
@@ -110,30 +114,55 @@ class MetricsLogger:
         
         model.eval()
         total_loss = 0.0
-        total_correct = 0
-        total_samples = 0
+        total_recall = 0.0
+        total_queries = 0
         
         with torch.no_grad():
             for Xb, Yb in test_loader:
                 Xb = Xb.to(device)
                 Yb = Yb.to(device)
                 
-                preds = model(Xb)
+                preds = model(Xb)  # Shape: (batch_size, num_clients) - probabilities for each client
                 loss = criterion(preds, Yb)
                 total_loss += loss.item()
                 
-                # Calculate accuracy (for multi-output regression, use inverse MSE)
-                mse = loss.item()
-                # Simple accuracy proxy: 1 - normalized MSE
-                batch_accuracy = max(0, 1.0 - mse / (torch.max(Yb).item() ** 2 + 1e-6))
-                total_correct += batch_accuracy * len(Xb)
-                total_samples += len(Xb)
+                # For each query in the batch
+                batch_size_actual = Xb.shape[0]
+                for i in range(batch_size_actual):
+                    # Get predicted probabilities for this query
+                    pred_probs = preds[i]  # Shape: (num_clients,)
+                    gt_relevant = Yb[i]     # Shape: (num_clients,) - ground truth relevance scores
+                    
+                    # Determine top-k for retrieval
+                    # If top_k not specified, use number of relevant clients in GT
+                    if top_k is None:
+                        # Count clients with non-zero relevance as ground truth size
+                        num_relevant = (gt_relevant > 1e-6).sum().item()
+                        k = max(1, num_relevant) if num_relevant > 0 else 1
+                    else:
+                        k = top_k
+                    
+                    # Get top-k predicted clients (highest probabilities) - retrieved_ids
+                    _, pred_topk_indices = torch.topk(pred_probs, k=min(k, pred_probs.shape[0]))
+                    retrieved_ids = set(pred_topk_indices.cpu().numpy().tolist())
+                    
+                    # Get ground truth relevant clients (clients with non-zero relevance) - gt_ids
+                    gt_relevant_indices = torch.where(gt_relevant > 1e-6)[0]
+                    gt_ids = set(gt_relevant_indices.cpu().numpy().tolist())
+                    
+                    # Calculate recall: len(gt_ids.intersection(retrieved_ids)) / len(gt_ids)
+                    if len(gt_ids) > 0:
+                        recall_query = len(gt_ids.intersection(retrieved_ids)) / len(gt_ids)
+                        total_recall += recall_query
+                        total_queries += 1
+                    # If no relevant items in GT, skip this query (can't calculate recall)
         
         avg_loss = total_loss / len(test_loader)
-        avg_accuracy = total_correct / total_samples if total_samples > 0 else 0.0
+        # Average recall across all queries
+        avg_recall = total_recall / total_queries if total_queries > 0 else 0.0
         
         self.test_loss_history.append(avg_loss)
-        self.test_accuracy_history.append(avg_accuracy)
+        self.test_recall_history.append(avg_recall)
     
     def log_security_metrics(self, accepted_client_ids: List[int], 
                             proof_of_personhood, poc_scores: Dict[int, Dict]):
@@ -235,7 +264,7 @@ class MetricsLogger:
         
         return {
             "total_rounds": self.current_round,
-            "final_test_accuracy": self.test_accuracy_history[-1] if self.test_accuracy_history else 0.0,
+            "final_test_recall": self.test_recall_history[-1] if self.test_recall_history else 0.0,
             "final_test_loss": self.test_loss_history[-1] if self.test_loss_history else 0.0,
             "final_honest_trust": self.trust_scores_honest[-1] if self.trust_scores_honest else 0.0,
             "final_sybil_trust": self.trust_scores_sybil[-1] if self.trust_scores_sybil else 0.0,
@@ -251,7 +280,7 @@ class MetricsLogger:
     def save_metrics(self, filepath: str):
         """Save all metrics to JSON file"""
         metrics_dict = {
-            "test_accuracy_history": self.test_accuracy_history,
+            "test_recall_history": self.test_recall_history,
             "test_loss_history": self.test_loss_history,
             "trust_scores_honest": self.trust_scores_honest,
             "trust_scores_sybil": self.trust_scores_sybil,
@@ -273,23 +302,23 @@ class MetricsLogger:
         """
         Plot 1: Global Convergence
         X-Axis: Communication Round (t)
-        Y-Axis: Test Accuracy (%)
+        Y-Axis: Test Recall (%)
         """
-        if not self.test_accuracy_history:
-            print("⚠️ No test accuracy data to plot")
+        if not self.test_recall_history:
+            print("⚠️ No test recall data to plot")
             return
         
-        rounds = list(range(1, len(self.test_accuracy_history) + 1))
-        accuracies = [acc * 100 for acc in self.test_accuracy_history]  # Convert to percentage
+        rounds = list(range(1, len(self.test_recall_history) + 1))
+        recalls = [rec * 100 for rec in self.test_recall_history]  # Convert to percentage
         
         plt.figure(figsize=(10, 6))
-        plt.plot(rounds, accuracies, 'b-', linewidth=2, marker='o', markersize=4)
+        plt.plot(rounds, recalls, 'b-', linewidth=2, marker='o', markersize=4)
         plt.xlabel('Communication Round (t)', fontsize=12)
-        plt.ylabel('Test Accuracy (%)', fontsize=12)
-        plt.title('Global Model Convergence: Test Accuracy Over Rounds', fontsize=14, fontweight='bold')
+        plt.ylabel('Test Recall (%)', fontsize=12)
+        plt.title('Global Model Convergence: Test Recall Over Rounds', fontsize=14, fontweight='bold')
         plt.grid(True, alpha=0.3)
         plt.xlim(0, len(rounds) + 1)
-        plt.ylim(0, max(accuracies) * 1.1 if accuracies else 100)
+        plt.ylim(0, max(recalls) * 1.1 if recalls else 100)
         
         if save_path:
             plt.savefig(save_path, dpi=300, bbox_inches='tight')

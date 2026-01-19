@@ -30,6 +30,7 @@ except ImportError:
 try:
     from .utils.data_utils import (
         load_test_query_data,
+        load_test_query_with_ground_truth,
         setup_test_data_for_metrics,
         distribute_data_to_clients,
         evaluate_global_model
@@ -80,6 +81,7 @@ __all__ = [
     'EnhancedBlockchainFederatedLearning',
     # Utils
     'load_test_query_data',
+    'load_test_query_with_ground_truth',
     'setup_test_data_for_metrics',
     'distribute_data_to_clients',
     'evaluate_global_model',

@@ -168,7 +168,7 @@ This file contains the exact code that needs to be added/updated in specific cel
                 print("\n" + "="*70)
                 print("METRICS SUMMARY")
                 print("="*70)
-                print(f"Final Test Accuracy: {summary['final_test_accuracy']*100:.2f}%")
+                print(f"Final Test Recall: {summary['final_test_recall']*100:.2f}%")
                 print(f"Final Test Loss: {summary['final_test_loss']:.6f}")
                 if summary.get('total_slashings', 0) > 0:
                     print(f"Total Slashings: {summary['total_slashings']}")

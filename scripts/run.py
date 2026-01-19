@@ -38,6 +38,7 @@ try:
     )
     from utils import (
         load_test_query_data,
+        load_test_query_with_ground_truth,
         setup_test_data_for_metrics,
         distribute_data_to_clients,
         evaluate_global_model,
@@ -50,6 +51,7 @@ except ImportError:
     from core.models import EnhancedMultiHeadDNN
     from utils.data_utils import (
         load_test_query_data,
+        load_test_query_with_ground_truth,
         setup_test_data_for_metrics,
         distribute_data_to_clients,
         evaluate_global_model
@@ -103,9 +105,6 @@ def main():
     np.random.seed(COMMON_CONFIG["random_seed"])
     torch.manual_seed(COMMON_CONFIG["random_seed"])
     
-    # Test query disabled - will use 10% of training data as test set
-    TEST_QUERY_DATA = None
-    
     for num_clients in CLIENT_SCALES:
         for dist_type in DISTRIBUTIONS:
             print("\n" + "="*70)
@@ -142,34 +141,38 @@ def main():
                 X_full = X_full[indices]
                 Y_full = Y_full[indices]
             
-            # Split data: 80% train, 10% test, 10% validation
-            # First split: 80% train, 20% temp (for test + val)
-            X_train, X_temp, Y_train, Y_temp = train_test_split(
+            # Split data: 80% train, 20% validation
+            X_train, X_val, Y_train, Y_val = train_test_split(
                 X_full,
                 Y_full,
-                test_size=0.2,  # 20% for test + val
+                test_size=0.2,  # 20% for validation
                 random_state=config["random_seed"]
             )
             
-            # Second split: 10% test, 10% validation (from the 20%)
-            X_test, X_val, Y_test, Y_val = train_test_split(
-                X_temp,
-                Y_temp,
-                test_size=0.5,  # Split 20% into 10% test + 10% val
-                random_state=config["random_seed"]
+            print(f"Train samples: {len(X_train)}, Val samples: {len(X_val)}")
+            
+            # Load test query data with ground truth
+            test_query_data = load_test_query_with_ground_truth(
+                BASE_DIR, 
+                num_clients, 
+                dist_type
             )
             
-            print(f"Train samples: {len(X_train)}, Test samples: {len(X_test)}, Val samples: {len(X_val)}")
+            if test_query_data is not None:
+                X_test_query, Y_test_query = test_query_data
+                print(f"✓ Using test query data: {X_test_query.shape} with ground truth: {Y_test_query.shape}")
+                test_data = (X_test_query, Y_test_query)
+            else:
+                # Fallback: use validation set as test data
+                print(f"⚠️ Test query data not available, using validation set as test data")
+                test_data = (X_val, Y_val)
             
-            # Use test data from training split (10% of original data)
-            test_data = (X_test, Y_test)
-            
-            # Initialize metrics logger with test data (10% from training)
+            # Initialize metrics logger with test data
             # Note: sybil_clients will be set after they're determined
             try:
                 metrics_logger = MetricsLogger(
                     num_clients=num_clients,
-                    test_data=test_data  # (X_test, Y_test) from training split
+                    test_data=test_data  # (X_test, Y_test) from test query or validation fallback
                 )
                 print(f"✓ MetricsLogger initialized with test data: {len(test_data[0])} samples")
             except Exception as e:
@@ -306,7 +309,7 @@ def main():
                 print("\n" + "="*70)
                 print("METRICS SUMMARY")
                 print("="*70)
-                print(f"Final Test Accuracy: {summary['final_test_accuracy']*100:.2f}%")
+                print(f"Final Test Recall: {summary['final_test_recall']*100:.2f}%")
                 print(f"Final Test Loss: {summary['final_test_loss']:.6f}")
                 if summary.get('total_slashings', 0) > 0:
                     print(f"Total Slashings: {summary['total_slashings']}")

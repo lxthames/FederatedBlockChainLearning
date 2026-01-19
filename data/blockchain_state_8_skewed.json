@@ -6398,5 +6398,3201 @@
       "1": true,
       "3": true
     }
+  },
+  {
+    "index": 11,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 17.205867767333984
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 6.434848273784155e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 3.766319513320923
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 6.623959541320801
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 1148.86865234375
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 68506.0390625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 18.239360809326172
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 5.472952125273878e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.136373519897461
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 6.086369514465332
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 1067.498046875
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 77616.9453125
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.2512346506118774
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.03383178636431694
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.4263681173324585
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.09149505198001862
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.1895151138305664
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.03683781996369362
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.1782864332199097
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.01930871792137623
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.0281769037246704
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.19717176258563995
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.2599983215332031
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.17639224231243134
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.1985543966293335
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.12357250601053238
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.2687921524047852
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.11706558614969254
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.1168347611092031,
+            "loss_reduction": 0.9902683217110105,
+            "robustness_score": 0.0006733870426940119,
+            "overall_score": 0.4429759105366243
+          },
+          "combined_score": 11.229452294768574
+        },
+        "local_epochs": 3,
+        "data_size": 321254,
+        "loss": 0.002302248231342476,
+        "timestamp": 1768780582.3993933,
+        "signature": "f3b2c67608d4209ebf9ae582cbd4bdc9f7f7ed518774e4b21aef00c9092df7dc"
+      },
+      {
+        "client_id": 1,
+        "public_id": "client-1",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 13.00632381439209
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 4.9043624130717944e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 3.095526695251465
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 4.685311317443848
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 735.4713745117188
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 55164.60546875
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 13.947966575622559
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 4.09639551435248e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8753293752670288
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 3.7259953022003174
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 793.5728759765625
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 58500.92578125
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.0192450284957886
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.002815454499796033
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9709015488624573
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.018890393897891045
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9394674897193909
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.04117511957883835
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.884715735912323
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.004225617740303278
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9075259566307068
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.12264549732208252
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9839548468589783
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.11672301590442657
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8055909872055054
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.05668981373310089
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.948243260383606
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.05997439846396446
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.11655135627370328,
+            "loss_reduction": 0.987866238391365,
+            "robustness_score": 0.0008669884166409784,
+            "overall_score": 0.4419404355493555
+          },
+          "combined_score": 11.53921499696867
+        },
+        "local_epochs": 3,
+        "data_size": 160627,
+        "loss": 0.0028318966046262627,
+        "timestamp": 1768780582.4013941,
+        "signature": "8f770e8e076f4f737e84e4af250a915fea01393a3dc9b916ebb9d98f4ef21586"
+      },
+      {
+        "client_id": 2,
+        "public_id": "client-2",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 9.629149436950684
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 4.621608695742907e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 2.2736024856567383
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.84926438331604
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 567.252685546875
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 45922.9296875
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 10.352415084838867
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 3.878014013025677e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8456389307975769
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.847211480140686
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 588.7596435546875
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 46367.76171875
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9202704429626465
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.007670514285564423
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8672524094581604
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.014183223247528076
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8169701099395752
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.003613080596551299
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8387940526008606
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.010543135926127434
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8293663859367371
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.07410616427659988
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8524166941642761
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0666305273771286
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6715177893638611
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0007809362723492086
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.848648726940155
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.03196603059768677
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.11616224655881524,
+            "loss_reduction": 0.9845682214256481,
+            "robustness_score": 0.0010685889212896991,
+            "overall_score": 0.4405059049780433
+          },
+          "combined_score": 11.161336204127501
+        },
+        "local_epochs": 3,
+        "data_size": 80313,
+        "loss": 0.003546232287178801,
+        "timestamp": 1768780582.4033926,
+        "signature": "7d434cf917237b3f46e8d4c5ea9769bdba4fe7ca12bb51409a92b370cf3143ad"
+      },
+      {
+        "client_id": 3,
+        "public_id": "client-3",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 7.047778606414795
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 4.256375177646987e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.6128969192504883
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.6629061698913574
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 498.33984375
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 40341.0703125
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 7.535219669342041
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 3.427080855544773e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.7618035674095154
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.9649258852005005
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 503.2445983886719
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 39716.859375
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7973001599311829
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.010708923451602459
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7416536808013916
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.02714766003191471
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6888474822044373
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.006702329497784376
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7271988391876221
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.007609297521412373
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7478411197662354
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.048796121031045914
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7196740508079529
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.04212278127670288
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5212817788124084
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.014253757894039154
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7362385988235474
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.011132082901895046
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.11573903448879719,
+            "loss_reduction": 0.9809811596443269,
+            "robustness_score": 0.0012317554207489452,
+            "overall_score": 0.4389344287373994
+          },
+          "combined_score": 10.076337081155291
+        },
+        "local_epochs": 3,
+        "data_size": 40156,
+        "loss": 0.0044742017651210105,
+        "timestamp": 1768780582.4053934,
+        "signature": "405def96d729025b35a99a4730a52c8f24fc5c037f8366158ef271a520d1000f"
+      },
+      {
+        "client_id": 4,
+        "public_id": "client-4",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 5.142139911651611
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 3.523992518239538e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.1147912740707397
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.9903022646903992
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 486.79144287109375
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 35286.8515625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 5.434142112731934
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 3.848069809464505e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.6423018574714661
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.5788093209266663
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 475.86151123046875
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 34994.5546875
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6042098999023438
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.008009231649339199
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5930219888687134
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.02895347774028778
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5237656235694885
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.01703919842839241
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5331900715827942
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0006413256051018834
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5821197032928467
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.03557642549276352
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.542339563369751
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.025346973910927773
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.37577715516090393
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.020375046879053116
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5765635967254639
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 3.272721005487256e-05
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.11518792132847011,
+            "loss_reduction": 0.9763100335242517,
+            "robustness_score": 0.0014012975998354332,
+            "overall_score": 0.43687944146105584
+          },
+          "combined_score": 8.871929500340025
+        },
+        "local_epochs": 3,
+        "data_size": 20078,
+        "loss": 0.005716116442948168,
+        "timestamp": 1768780582.4083931,
+        "signature": "504201a67962c4306a3423a7c111eb838fa1e93e8dc5c0399cfc808a88944b9a"
+      },
+      {
+        "client_id": 5,
+        "public_id": "client-5",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 3.7055327892303467
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 3.716426363098435e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.7111145257949829
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.5809160470962524
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 477.1083068847656
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 31729.15234375
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 3.9438648223876953
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 3.739057319762651e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.47399961948394775
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.3806387186050415
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 470.9626159667969
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 30737.72265625
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.37155503034591675
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.005224038381129503
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.4677532911300659
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.031046273186802864
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3658464550971985
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.015224944800138474
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3973957896232605
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.003263831837102771
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3941800594329834
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.025759661570191383
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3423336446285248
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.01813143491744995
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.25016093254089355
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.01859838329255581
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.43334272503852844
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.00974978692829609
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.11447977577336133,
+            "loss_reduction": 0.9703079318917655,
+            "robustness_score": 0.0015741117411500118,
+            "overall_score": 0.43422990541428075
+          },
+          "combined_score": 7.724014178235566
+        },
+        "local_epochs": 3,
+        "data_size": 10039,
+        "loss": 0.0072979061443845935,
+        "timestamp": 1768780582.4103937,
+        "signature": "5c8ec7cbb2b9cd926b5b40c9f70c23e9399705a454e9ba6ae2717a3d932165b5"
+      },
+      {
+        "client_id": 6,
+        "public_id": "client-6",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 2.743281841278076
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.6624181828083238e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.4155273735523224
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.3292209506034851
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 474.5103759765625
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 29448.53125
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 2.901012659072876
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.7041278372053057e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.3402431905269623
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.2703245282173157
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 457.9692687988281
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 28306.939453125
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.21416109800338745
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0062204571440815926
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3951520323753357
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.032972387969493866
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.26261353492736816
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.016126388683915138
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.2570935785770416
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.001416688086465001
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.2544350326061249
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.01823873072862625
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.2252275049686432
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.014273567125201225
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.20319867134094238
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.018534697592258453
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.32140618562698364
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.015880756080150604
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.11345589393749833,
+            "loss_reduction": 0.9616297120057955,
+            "robustness_score": 0.0017007610607142811,
+            "overall_score": 0.4303743945894604
+          },
+          "combined_score": 6.599691893527259
+        },
+        "local_epochs": 3,
+        "data_size": 5019,
+        "loss": 0.009180870368921507,
+        "timestamp": 1768780582.4123936,
+        "signature": "9cce5054310e2814e86ac6b47ef4a9a2f7621661dab6046205cdb2b22624dcb6"
+      },
+      {
+        "client_id": 7,
+        "public_id": "client-7",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 2.0201103687286377
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 3.319681354696513e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.2544015347957611
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.21975412964820862
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 476.1532897949219
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 27893.880859375
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 2.116339683532715
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.44437751462101e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.23506379127502441
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.20712478458881378
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 457.6515808105469
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 26283.119140625
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.13651031255722046
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0049087586812675
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.33471113443374634
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.029587889090180397
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.20972523093223572
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.016195282340049744
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.18099775910377502
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.001108529162593186
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.17327375710010529
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.014182760380208492
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.16839994490146637
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.016841759905219078
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.17759892344474792
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.016459321603178978
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.2571539282798767
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.018084092065691948
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.11210534442216158,
+            "loss_reduction": 0.9501827214933564,
+            "robustness_score": 0.001811016337439285,
+            "overall_score": 0.4252774296336951
+          },
+          "combined_score": 5.5305645042210125
+        },
+        "local_epochs": 3,
+        "data_size": 2511,
+        "loss": 0.011643109532694021,
+        "timestamp": 1768780582.4143937,
+        "signature": "eb6617b63b7bdc6206ef6a975257c8b867d395185cddcff01a1a1e763563ac66"
+      }
+    ],
+    "previous_hash": "c0ccf234db11796f1a84afc0076d4c3cdec5feeab80329c7eb57c841fa92dbdb",
+    "timestamp": 1768780582.415393,
+    "hash": "8e1d9cbbf41cdd2bd76f9e1dd9997befba66cce3cda354e6349d13d64c1f55eb",
+    "committee_votes": {
+      "0": true,
+      "1": true
+    }
+  },
+  {
+    "index": 12,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 10.566178321838379
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 3.6919579997629626e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0341356992721558
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.720072031021118
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 724.642578125
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 26628.03515625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 9.858541488647461
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 6.870911875012098e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 1.163718819618225
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.9600954055786133
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 607.28564453125
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 30282.259765625
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.0953266620635986
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.07037840038537979
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.2579766511917114
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.10033182799816132
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.0793191194534302
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.011009059846401215
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9614233374595642
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.04441250115633011
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9719571471214294
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.11018961668014526
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9262682199478149
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.05626209080219269
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9683852791786194
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.10206258296966553
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.0817017555236816
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.07178546488285065
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.00033330044243484735,
+            "loss_reduction": 0.25000373441823587,
+            "robustness_score": 0.0017129319688837805,
+            "overall_score": 0.10047740033804504
+          },
+          "combined_score": 36.99700477309748
+        },
+        "local_epochs": 3,
+        "data_size": 321254,
+        "loss": 0.0015850313480449952,
+        "timestamp": 1768780622.0797503,
+        "signature": "b9c8d3af4daeeb9fb4ea335b762dfb9b489ddb5016d93fc2b336dd0b6ac9bf7e"
+      },
+      {
+        "client_id": 1,
+        "public_id": "client-1",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 7.18672513961792
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.460098130541155e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.7717282176017761
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.9095515012741089
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 433.4696350097656
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 13084.1494140625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 6.69104528427124
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 5.072045496490318e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.7392838001251221
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.1104137897491455
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 372.081298828125
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 14104.849609375
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6764215230941772
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.04622709006071091
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7566147446632385
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0624486543238163
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.64118891954422
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.010193578898906708
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6161349415779114
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.030496781691908836
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5819107294082642
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0693378895521164
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5551344156265259
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.04147988557815552
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5937091708183289
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.07879027724266052
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6597488522529602
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.05033884942531586
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.00025044416543096304,
+            "loss_reduction": 0.18785446596950867,
+            "robustness_score": 0.0035562599935901923,
+            "overall_score": 0.0759532160526939
+          },
+          "combined_score": 63.6904445346813
+        },
+        "local_epochs": 3,
+        "data_size": 160627,
+        "loss": 0.001652068997625692,
+        "timestamp": 1768780622.08175,
+        "signature": "b9f72449fcd8b6e181acbc0af817aac0da4cdf2fbcbeafdbb72487f4086b8cd2"
+      },
+      {
+        "client_id": 2,
+        "public_id": "client-2",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 4.952585220336914
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.6283860304611153e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.5483356714248657
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.294232964515686
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 256.150146484375
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 6384.73681640625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 4.580172061920166
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.372968765484984e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.45928704738616943
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.3833149671554565
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 232.75686645507812
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 6135.46728515625
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.40041619539260864
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0232574213296175
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.43939009308815
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.03463921323418617
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3684408366680145
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.005597062408924103
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3688002824783325
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.012902634218335152
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3259661793708801
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.037784725427627563
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.33541059494018555
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.026011154055595398
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3572276532649994
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.04376181960105896
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.35774725675582886
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.030609801411628723
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.00018361408729106188,
+            "loss_reduction": 0.13772621236029306,
+            "robustness_score": 0.007618759116602651,
+            "overall_score": 0.05668768240235418
+          },
+          "combined_score": 102.3838915184531
+        },
+        "local_epochs": 3,
+        "data_size": 80313,
+        "loss": 0.0016963196724466385,
+        "timestamp": 1768780622.0837493,
+        "signature": "40761838210e5ff418050b605e54abb0771addf261f59f3607606709f4c21607"
+      },
+      {
+        "client_id": 3,
+        "public_id": "client-3",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 3.541931390762329
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0601019084788277e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.3897249400615692
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.806627631187439
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 167.6403045654297
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 6306.08740234375
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 3.2610111236572266
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.6079626448117779e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.26873284578323364
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.793992280960083
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 139.6329345703125
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 5551.30419921875
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.2084234058856964
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.011810189113020897
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.23319198191165924
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.015990350395441055
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.19464755058288574
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.005775284022092819
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.19950203597545624
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.008888676762580872
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.16517852246761322
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.024847105145454407
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.19137226045131683
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.018912270665168762
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.20313963294029236
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.025494888424873352
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.2114182710647583
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.017825879156589508
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 0.00010901421774178743,
+            "loss_reduction": 0.08176995308206678,
+            "robustness_score": 0.00814633205311131,
+            "overall_score": 0.03438085333054569
+          },
+          "combined_score": 104.141025341232
+        },
+        "local_epochs": 3,
+        "data_size": 40156,
+        "loss": 0.001731413163342602,
+        "timestamp": 1768780622.0857494,
+        "signature": "0d629504d9488b6acbd633d94f6f502a121b146f61cda93fad6893475e03d37b"
+      }
+    ],
+    "previous_hash": "8e1d9cbbf41cdd2bd76f9e1dd9997befba66cce3cda354e6349d13d64c1f55eb",
+    "timestamp": 1768780622.0857494,
+    "hash": "8c34c4ec4e2b81a4582c54c8c560ad75636e50b4cbab0422fbc167aadce61b13",
+    "committee_votes": {
+      "0": true,
+      "1": true
+    }
+  },
+  {
+    "index": 13,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 8.045846939086914
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 5.31464957020944e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.5020022988319397
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.2892786264419556
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 526.9340209960938
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 26224.68359375
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 7.310562610626221
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 5.4472507144964766e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.7321738004684448
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.1865569353103638
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 426.9993896484375
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 30301.1640625
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.63590008020401
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.040269672870635986
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9772945046424866
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.05916842818260193
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.735289990901947
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.00808752328157425
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6352442502975464
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.01583264395594597
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6976308226585388
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.05979163944721222
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.601996898651123
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.02147875726222992
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.6133787035942078
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.046710118651390076
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7306365966796875
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.034849196672439575
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 8.08567856438458e-05,
+            "loss_reduction": 0.07874385519052796,
+            "robustness_score": 0.0017359676207684834,
+            "overall_score": 0.03187707831462242
+          },
+          "combined_score": 40.33949966294751
+        },
+        "local_epochs": 3,
+        "data_size": 321254,
+        "loss": 0.0014686064229898434,
+        "timestamp": 1768780661.81385,
+        "signature": "915f02f78ccfa1f648477c0cc858586bfea99e6dc1c82fa7a7590fcd745b6ecc"
+      },
+      {
+        "client_id": 1,
+        "public_id": "client-1",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 5.552364826202393
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 2.7985968245047843e-06
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.3287317156791687
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8439487218856812
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 307.92816162109375
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 12305.4072265625
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 4.980755805969238
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 5.1623728722915985e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.46391749382019043
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 0.8438539505004883
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 260.1622009277344
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 15919.1279296875
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.44068464636802673
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.028040848672389984
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.5978376269340515
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.04153965413570404
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.4948906898498535
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0034580975770950317
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.4230562448501587
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.013559430837631226
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.42858225107192993
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.035634562373161316
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3923532962799072
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.014424547553062439
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.3878364562988281
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.030868276953697205
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.46461939811706543
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.020095184445381165
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 5.0370930694043636e-05,
+            "loss_reduction": 0.04905464941254172,
+            "robustness_score": 0.0034590757429698556,
+            "overall_score": 0.02033382328588828
+          },
+          "combined_score": 69.18651400523552
+        },
+        "local_epochs": 3,
+        "data_size": 160627,
+        "loss": 0.0014889701590830012,
+        "timestamp": 1768780661.8148496,
+        "signature": "d1337d9bd9c1b2e0310fdb2c6cff40c1d835bb974c21757059bf54ea36adb080"
+      }
+    ],
+    "previous_hash": "8c34c4ec4e2b81a4582c54c8c560ad75636e50b4cbab0422fbc167aadce61b13",
+    "timestamp": 1768780661.8158493,
+    "hash": "079a3479956449e5d53ae8e652437fae63ac9e8b2035ac73074702a8e36437c5",
+    "committee_votes": {
+      "2": true,
+      "3": true
+    }
+  },
+  {
+    "index": 14,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 10.737302780151367
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0028594260802492e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.5485720038414001
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.3536899089813232
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 737.891357421875
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 52399.328125
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 9.679733276367188
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 9.9972030511708e-06
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.7977083325386047
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0283745527267456
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 636.4608154296875
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 54813.09375
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9341086149215698
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.009437106549739838
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.0880144834518433
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.016697585582733154
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8569506406784058
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0196339450776577
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7678178548812866
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.012621533125638962
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.927790641784668
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.02682650089263916
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7655583620071411
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.030023664236068726
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7917064428329468
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.054709821939468384
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.287370204925537
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.030049562454223633
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 6.88162399455905e-05,
+            "loss_reduction": 0.07351592142805763,
+            "robustness_score": 0.0009198063286659242,
+            "overall_score": 0.029617856332934477
+          },
+          "combined_score": 24.41292819063264
+        },
+        "local_epochs": 3,
+        "data_size": 321254,
+        "loss": 0.001381304734879684,
+        "timestamp": 1768780739.291674,
+        "signature": "ce2b83b9894d672a89ba6e91adbfc8f8ed9625f788b530c91936361156f540b3"
+      }
+    ],
+    "previous_hash": "079a3479956449e5d53ae8e652437fae63ac9e8b2035ac73074702a8e36437c5",
+    "timestamp": 1768780739.291674,
+    "hash": "93e679430da050d435be45c2ca52454236bd61161569c800f2443c3cec9b0b47",
+    "committee_votes": {
+      "1": true,
+      "3": true
+    }
+  },
+  {
+    "index": 15,
+    "transactions": [
+      {
+        "client_id": 0,
+        "public_id": "client-0",
+        "model_update": {
+          "branch1.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 11.783012390136719
+          },
+          "branch1.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0332595593354199e-05
+          },
+          "branch1.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.4999192953109741
+          },
+          "branch1.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.1601722240447998
+          },
+          "branch1.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 757.0223999023438
+          },
+          "branch1.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 80423.375
+          },
+          "branch2.0.weight": {
+            "shape": [
+              128,
+              128
+            ],
+            "norm": 10.248360633850098
+          },
+          "branch2.0.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.2496277122409083e-05
+          },
+          "branch2.1.weight": {
+            "shape": [
+              128
+            ],
+            "norm": 0.7536341547966003
+          },
+          "branch2.1.bias": {
+            "shape": [
+              128
+            ],
+            "norm": 1.0402778387069702
+          },
+          "branch2.1.running_mean": {
+            "shape": [
+              128
+            ],
+            "norm": 683.9747314453125
+          },
+          "branch2.1.running_var": {
+            "shape": [
+              128
+            ],
+            "norm": 82158.1640625
+          },
+          "heads.0.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 1.0087089538574219
+          },
+          "heads.0.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.012081414461135864
+          },
+          "heads.1.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8817563056945801
+          },
+          "heads.1.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.006345584988594055
+          },
+          "heads.2.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.7104195952415466
+          },
+          "heads.2.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.019035615026950836
+          },
+          "heads.3.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.8318536281585693
+          },
+          "heads.3.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.00794123113155365
+          },
+          "heads.4.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.742299497127533
+          },
+          "heads.4.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.0018516778945922852
+          },
+          "heads.5.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.736933708190918
+          },
+          "heads.5.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.007637441158294678
+          },
+          "heads.6.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.723177433013916
+          },
+          "heads.6.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.022956520318984985
+          },
+          "heads.7.weight": {
+            "shape": [
+              1,
+              128
+            ],
+            "norm": 0.9155658483505249
+          },
+          "heads.7.bias": {
+            "shape": [
+              1
+            ],
+            "norm": 0.015103384852409363
+          },
+          "poc_metrics": {
+            "accuracy_improvement": 5.194981349632144e-05,
+            "loss_reduction": 0.059901334483364606,
+            "robustness_score": 0.0006091815900630751,
+            "overall_score": 0.024103150036756987
+          },
+          "combined_score": 17.25173438108389
+        },
+        "local_epochs": 3,
+        "data_size": 321254,
+        "loss": 0.0013322321439265788,
+        "timestamp": 1768780855.2886512,
+        "signature": "2854895aea5e9f51f26818705cf3628b6d049bf2142b8c926278e8064680930a"
+      }
+    ],
+    "previous_hash": "93e679430da050d435be45c2ca52454236bd61161569c800f2443c3cec9b0b47",
+    "timestamp": 1768780855.2886512,
+    "hash": "26e8f66211f8d9dbd387b3e3bee2f7176d2b46c1f6fae35be6ac316563df58d1",
+    "committee_votes": {
+      "1": true,
+      "3": true
+    }
   }
 ]

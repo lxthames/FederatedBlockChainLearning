@@ -11,6 +11,14 @@ import torch.nn as nn
 from torch.utils.data import TensorDataset, DataLoader
 from typing import List, Tuple, Optional
 
+__all__ = [
+    'load_test_query_data',
+    'load_test_query_with_ground_truth',
+    'setup_test_data_for_metrics',
+    'distribute_data_to_clients',
+    'evaluate_global_model'
+]
+
 
 def load_test_query_data(base_dir: str = "./data", test_file: str = "SIFT_test_query.npy") -> Optional[np.ndarray]:
     """
@@ -40,17 +48,64 @@ def load_test_query_data(base_dir: str = "./data", test_file: str = "SIFT_test_q
         return None
 
 
-def setup_test_data_for_metrics(X_test_query: Optional[np.ndarray], X_val: np.ndarray, 
-                                Y_val: np.ndarray, num_clients: int) -> Tuple[np.ndarray, np.ndarray]:
+def load_test_query_with_ground_truth(base_dir: str, num_clients: int, 
+                                     dist_type: str = "skewed") -> Optional[Tuple[np.ndarray, np.ndarray]]:
+    """
+    Load test query data with corresponding ground truth labels.
+    
+    Args:
+        base_dir: Base directory containing data files
+        num_clients: Number of clients (for determining ground truth file)
+        dist_type: Distribution type ("skewed" or "uniform")
+        
+    Returns:
+        (X_test, Y_test) tuple if files exist, None otherwise
+    """
+    test_query_path = os.path.join(base_dir, "SIFT_test_query.npy")
+    ground_truth_path = os.path.join(base_dir, f"gt_{num_clients}M_client_counts_{dist_type}test.npy")
+    
+    if not os.path.exists(test_query_path):
+        print(f"⚠️ Test query file not found: {test_query_path}")
+        return None
+    
+    if not os.path.exists(ground_truth_path):
+        print(f"⚠️ Ground truth file not found: {ground_truth_path}")
+        return None
+    
+    try:
+        X_test = np.load(test_query_path)
+        Y_test_raw = np.load(ground_truth_path)
+        
+        # Ensure same length
+        min_len = min(len(X_test), len(Y_test_raw))
+        X_test = X_test[:min_len]
+        Y_test_raw = Y_test_raw[:min_len]
+        
+        # Normalize Y (convert to probabilities)
+        Y_sums = Y_test_raw.sum(axis=1, keepdims=True).astype(np.float32)
+        Y_sums[Y_sums == 0] = 1.0
+        Y_test = Y_test_raw.astype(np.float32) / Y_sums
+        
+        print(f"✓ Loaded test query data: {X_test.shape}")
+        print(f"✓ Loaded test ground truth: {Y_test.shape}")
+        return (X_test, Y_test)
+    except Exception as e:
+        print(f"❌ Error loading test query/ground truth: {e}")
+        return None
+
+
+def setup_test_data_for_metrics(X_test_query: Optional[np.ndarray], 
+                                Y_test_query: Optional[np.ndarray],
+                                X_val: np.ndarray, 
+                                Y_val: np.ndarray, 
+                                num_clients: int) -> Tuple[np.ndarray, np.ndarray]:
     """
     Setup test data for metrics logger.
-    If test query is available, use it; otherwise use validation set.
-    
-    NOTE: SIFT_test_query.npy only contains features, not labels.
-    We use validation set for testing to ensure meaningful metrics.
+    If test query with ground truth is available, use it; otherwise use validation set.
     
     Args:
         X_test_query: Test query features (from SIFT_test_query.npy) or None
+        Y_test_query: Test query ground truth labels or None
         X_val: Validation features
         Y_val: Validation labels
         num_clients: Number of clients (for label shape)
@@ -58,12 +113,9 @@ def setup_test_data_for_metrics(X_test_query: Optional[np.ndarray], X_val: np.nd
     Returns:
         (X_test, Y_test) tuple for metrics logger
     """
-    if X_test_query is not None:
-        print(f"Test query data available: {X_test_query.shape}")
-        print("  ⚠️  Test query has no labels - using validation set for meaningful metrics")
-        print("  (Test query can be used for inference, but validation set is needed for evaluation)")
-        # Use validation set instead of dummy labels for accurate metrics
-        return (X_val, Y_val)
+    if X_test_query is not None and Y_test_query is not None:
+        print(f"✓ Using test query data with ground truth: {X_test_query.shape}")
+        return (X_test_query, Y_test_query)
     else:
         print(f"Using validation set as test data: {X_val.shape}")
         return (X_val, Y_val)

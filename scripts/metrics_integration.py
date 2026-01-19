@@ -164,7 +164,7 @@ def main_blockchain_federated():
     print("\n" + "="*70)
     print("METRICS SUMMARY")
     print("="*70)
-    print(f"Final Test Accuracy: {summary['final_test_accuracy']*100:.2f}%")
+    print(f"Final Test Recall: {summary['final_test_recall']*100:.2f}%")
     print(f"Final Test Loss: {summary['final_test_loss']:.6f}")
     print(f"Final Honest Trust: {summary['final_honest_trust']:.4f}")
     print(f"Final Sybil Trust: {summary['final_sybil_trust']:.4f}")
