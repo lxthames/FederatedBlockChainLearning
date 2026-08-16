@@ -1,0 +1,17 @@
+experiment_id: synthetic-two-layer-smoke
+dataset: synthetic
+num_clients: 4
+participation_rate: 1.0
+malicious_fraction: 0.25
+malicious_validator_fraction: 0.25
+dirichlet_alpha: 0.5
+rounds: 3
+local_epochs: 1
+batch_size: 16
+learning_rate: 0.02
+seed: 13
+attack: sign_flip
+defense: two_layer
+synthetic_samples: 200
+input_dim: 8
+num_classes: 2

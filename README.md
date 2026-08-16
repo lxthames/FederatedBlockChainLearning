@@ -1,8 +1,14 @@
-# Federated Blockchain Learning - Complete Package
+# Federated Blockchain Learning
 
-## ✅ Package Complete
+> **Research status:** The original 4/8-client outputs and legacy `scripts/run.py`
+> are pilot artifacts, not publication evidence. New journal experiments must use
+> the tested `scripts.research` harness and
+> `docs/research/EXPERIMENT_PROTOCOL.md`.
 
-All code from the notebook has been extracted and organized into a proper Python package following software engineering principles.
+## Legacy prototype package
+
+The original notebook code is retained under `scripts/` for traceability. It is
+superseded for new evidence by the journal stress-test harness described below.
 
 ## 📁 Package Structure
 
@@ -119,13 +125,15 @@ All code has been:
 - ✅ Type hinted
 - ✅ Following software engineering principles
 
-## 🎯 Ready to Use
+## Journal stress-test harness
 
-The package is complete and production-ready. Simply run:
-
-```bash
-python scripts/run.py
+```powershell
+python -m pip install -r requirements-research.txt
+python -m pytest -q
+python -m scripts.research.cli run --config configs/smoke.yaml --output results/smoke
 ```
 
-All features are integrated and working!
+See `docs/research/REPRODUCIBILITY.md` for matrix export and dataset requirements.
+This repository is a simulator and does not claim production blockchain,
+formal privacy, or Proof-of-Personhood guarantees.
 

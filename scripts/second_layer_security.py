@@ -200,8 +200,11 @@ class StakingSystem:
 # ============================================================================
 class RollbackBlockchain:
     """
-    Enhanced blockchain with rollback capability.
-    Can revert to previous states if poisoning is detected.
+    Compatibility wrapper for application-layer model recovery.
+
+    Confirmed blocks remain immutable. ``revert_to_block`` retains its legacy
+    name but only restores a checkpoint and appends an in-memory recovery
+    record; it never truncates the underlying chain.
     """
     
     def __init__(self, base_blockchain):
@@ -230,25 +233,20 @@ class RollbackBlockchain:
         if block_height < 0 or block_height >= len(self.blockchain.chain):
             raise ValueError(f"Invalid block height: {block_height}")
         
-        # Discard all blocks after target
-        self.blockchain.chain = self.blockchain.chain[:block_height + 1]
-        self.blockchain.pending_transactions = []
+        from_block = len(self.blockchain.chain) - 1
         
         # Get model state from checkpoint
         if block_height in self.model_checkpoints:
-            model_state = self.model_checkpoints[block_height]
+            model_state = copy.deepcopy(self.model_checkpoints[block_height])
         else:
-            # Fallback: try to get from block transactions
             model_state = None
-            for block in reversed(self.blockchain.chain[:block_height + 1]):
-                if block.transactions:
-                    # Try to reconstruct from last transaction (simplified)
-                    break
         
         self.rollback_history.append({
-            'from_block': len(self.blockchain.chain) - 1,
+            'from_block': from_block,
             'to_block': block_height,
-            'blocks_discarded': len(self.blockchain.chain) - block_height - 1
+            'blocks_discarded': 0,
+            'invalidated_versions': list(range(block_height + 1, from_block + 1)),
+            'semantics': 'application_layer_recovery'
         })
         
         return model_state
@@ -259,8 +257,12 @@ class RollbackBlockchain:
             return []
         
         block = self.blockchain.chain[block_index]
-        if hasattr(block, 'committee_votes'):
-            return list(block.committee_votes.keys())
+        if block is not None and hasattr(block, 'committee_votes'):
+            return [
+                client_id
+                for client_id, approved in block.committee_votes.items()
+                if approved
+            ]
         return []
     
     def get_latest_block_index(self) -> int:

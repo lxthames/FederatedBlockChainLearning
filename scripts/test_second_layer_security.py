@@ -116,8 +116,8 @@ def test_staking_system():
 # ============================================================================
 def test_rollback():
     """
-    Test blockchain rollback.
-    Expected: Can revert to previous block and restore model state.
+    Test application-layer model recovery.
+    Expected: Restore a checkpoint without deleting confirmed blocks.
     """
     print("="*70)
     print("TEST 4: Rollback Functionality")
@@ -139,12 +139,14 @@ def test_rollback():
         model_state = {'layer1.weight': torch.randn(10, 10), 'version': i}
         rollback_bc.checkpoint_model(i, model_state)
     
-    # Rollback to block 2
+    # Recover model version 2 while retaining immutable history
     model_state = rollback_bc.revert_to_block(2)
     
-    assert len(rollback_bc.blockchain.chain) == 3, "Chain length incorrect after rollback"
+    assert len(rollback_bc.blockchain.chain) == 10, "Confirmed blocks must remain immutable"
     assert model_state['version'] == 2, "Model state incorrect"
     assert len(rollback_bc.rollback_history) == 1, "Rollback not logged"
+    assert rollback_bc.rollback_history[0]['from_block'] == 9
+    assert rollback_bc.rollback_history[0]['to_block'] == 2
     
     print("✓ Test 4 PASSED: Rollback works correctly\n")
 
