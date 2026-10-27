@@ -1,0 +1,286 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{17}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Andreina et~al\mbox{.}(2021)]%
+        {fu2020baffle}
+\bibfield{author}{\bibinfo{person}{Sebastien Andreina},
+  \bibinfo{person}{Giorgia~Azzurra Marson}, \bibinfo{person}{Helen
+  M{\"o}llering}, {and} \bibinfo{person}{Ghassan Karame}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{{BaFFLe}: Backdoor Detection via Feedback-based
+  Federated Learning}. In \bibinfo{booktitle}{\emph{41st IEEE International
+  Conference on Distributed Computing Systems}}. \bibinfo{publisher}{IEEE}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2011.02167}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Bagdasaryan et~al\mbox{.}(2020)]%
+        {bagdasaryan2020how}
+\bibfield{author}{\bibinfo{person}{Eugene Bagdasaryan},
+  \bibinfo{person}{Andreas Veit}, \bibinfo{person}{Yiqing Hua},
+  \bibinfo{person}{Deborah Estrin}, {and} \bibinfo{person}{Vitaly Shmatikov}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{How To Backdoor Federated Learning}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the Twenty Third International
+  Conference on Artificial Intelligence and Statistics}},
+  Vol.~\bibinfo{volume}{108}. \bibinfo{publisher}{PMLR},
+  \bibinfo{pages}{2938--2948}.
+\newblock
+
+
+\bibitem[Cao et~al\mbox{.}(2021)]%
+        {cao2021fltrust}
+\bibfield{author}{\bibinfo{person}{Xiaoyu Cao}, \bibinfo{person}{Minghong
+  Fang}, \bibinfo{person}{Jia Liu}, {and} \bibinfo{person}{Neil~Zhenqiang
+  Gong}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{FLTrust: Byzantine-robust Federated Learning via
+  Trust Bootstrapping}. In \bibinfo{booktitle}{\emph{Proceedings of the Network
+  and Distributed System Security Symposium}}.
+\newblock
+
+
+\bibitem[Choe et~al\mbox{.}(2025)]%
+        {li2025sdba}
+\bibfield{author}{\bibinfo{person}{Minyeong Choe}, \bibinfo{person}{Cheolhee
+  Park}, \bibinfo{person}{Changho Seo}, {and} \bibinfo{person}{Hyunil Kim}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{SDBA: A Stealthy and Long-Lasting Durable Backdoor
+  Attack in Federated Learning}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Dependable and Secure
+  Computing}} \bibinfo{volume}{22}, \bibinfo{number}{6} (\bibinfo{year}{2025}),
+  \bibinfo{pages}{6929--6942}.
+\newblock
+\href{https://doi.org/10.1109/TDSC.2025.3593640}{doi:\nolinkurl{10.1109/TDSC.2025.3593640}}
+
+
+\bibitem[Li et~al\mbox{.}(2021)]%
+        {li2021nad}
+\bibfield{author}{\bibinfo{person}{Yige Li}, \bibinfo{person}{Xixiang Lyu},
+  \bibinfo{person}{Nodens Koren}, \bibinfo{person}{Lingjuan Lyu},
+  \bibinfo{person}{Bo Li}, {and} \bibinfo{person}{Xingjun Ma}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Neural Attention Distillation: Erasing Backdoor
+  Triggers from Deep Neural Networks}. In
+  \bibinfo{booktitle}{\emph{International Conference on Learning
+  Representations}}.
+\newblock
+
+
+\bibitem[Li et~al\mbox{.}(2025)]%
+        {li2025survey}
+\bibfield{author}{\bibinfo{person}{Zhaozheng Li}, \bibinfo{person}{Jiahe Lan},
+  \bibinfo{person}{Zheng Yan}, {and} \bibinfo{person}{Erol Gelenbe}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Backdoor Attacks and Defense Mechanisms in
+  Federated Learning: A Survey}.
+\newblock \bibinfo{journal}{\emph{Information Fusion}}  \bibinfo{volume}{123}
+  (\bibinfo{year}{2025}), \bibinfo{pages}{103248}.
+\newblock
+\href{https://doi.org/10.1016/j.inffus.2025.103248}{doi:\nolinkurl{10.1016/j.inffus.2025.103248}}
+
+
+\bibitem[Liu et~al\mbox{.}(2026)]%
+        {liu2026prodigal}
+\bibfield{author}{\bibinfo{person}{Guozhi Liu}, \bibinfo{person}{Weiwei Lin},
+  \bibinfo{person}{Tiansheng Huang}, \bibinfo{person}{Fang Shi},
+  \bibinfo{person}{Xiumin Wang}, {and} \bibinfo{person}{Li Shen}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Prodigal: Backdoor Defense for Federated Learning
+  Beyond Robust Aggregation}.
+\newblock \bibinfo{journal}{\emph{Knowledge-Based Systems}}
+  \bibinfo{volume}{333} (\bibinfo{year}{2026}), \bibinfo{pages}{114903}.
+\newblock
+\href{https://doi.org/10.1016/j.knosys.2025.114903}{doi:\nolinkurl{10.1016/j.knosys.2025.114903}}
+
+
+\bibitem[Liu et~al\mbox{.}(2018)]%
+        {liu2018finepruning}
+\bibfield{author}{\bibinfo{person}{Kang Liu}, \bibinfo{person}{Brendan
+  Dolan-Gavitt}, {and} \bibinfo{person}{Siddharth Garg}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Fine-Pruning: Defending Against Backdooring Attacks
+  on Deep Neural Networks}. In \bibinfo{booktitle}{\emph{Research in Attacks,
+  Intrusions, and Defenses}}. \bibinfo{publisher}{Springer},
+  \bibinfo{pages}{273--294}.
+\newblock
+
+
+\bibitem[Rieger et~al\mbox{.}(2024)]%
+        {zhang2022crowdguard}
+\bibfield{author}{\bibinfo{person}{Phillip Rieger}, \bibinfo{person}{Torsten
+  Krau{\ss}}, \bibinfo{person}{Markus Miettinen}, \bibinfo{person}{Alexandra
+  Dmitrienko}, {and} \bibinfo{person}{Ahmad-Reza Sadeghi}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{CrowdGuard}: Federated Backdoor Detection in
+  Federated Learning}. In \bibinfo{booktitle}{\emph{Network and Distributed
+  System Security Symposium}}. \bibinfo{publisher}{Internet Society}.
+\newblock
+\urldef\tempurl%
+\url{https://www.ndss-symposium.org/wp-content/uploads/2024-233-paper.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Syros et~al\mbox{.}(2024)]%
+        {syros2024p2p}
+\bibfield{author}{\bibinfo{person}{Georgios Syros}, \bibinfo{person}{Gokberk
+  Yar}, \bibinfo{person}{Simona Boboila}, \bibinfo{person}{Cristina
+  Nita-Rotaru}, {and} \bibinfo{person}{Alina Oprea}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Backdoor Attacks in Peer-to-Peer Federated
+  Learning}.
+\newblock \bibinfo{journal}{\emph{ACM Transactions on Privacy and Security}}
+  \bibinfo{volume}{28}, \bibinfo{number}{1} (\bibinfo{year}{2024}).
+\newblock
+\href{https://doi.org/10.1145/3691633}{doi:\nolinkurl{10.1145/3691633}}
+
+
+\bibitem[{TensorFlow Federated Authors}(2026)]%
+        {tffemnist}
+\bibfield{author}{\bibinfo{person}{{TensorFlow Federated Authors}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Federated {EMNIST} dataset loader}.
+\newblock
+\shownote{Accessed October 25, 2026. Historical TFF HDF5 distribution, 62-class
+  variant; exact archive and source hashes are listed in the reproducibility
+  package}.
+\newblock
+\urldef\tempurl%
+\url{https://www.tensorflow.org/federated/api_docs/python/tff/simulation/datasets/emnist/load_data}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Wan et~al\mbox{.}(2025)]%
+        {wan2025mars}
+\bibfield{author}{\bibinfo{person}{Wei Wan}, \bibinfo{person}{Yuxuan Ning},
+  \bibinfo{person}{Zhicong Huang}, \bibinfo{person}{Cheng Hong},
+  \bibinfo{person}{Shengshan Hu}, \bibinfo{person}{Ziqi Zhou},
+  \bibinfo{person}{Yechao Zhang}, \bibinfo{person}{Tianqing Zhu},
+  \bibinfo{person}{Wanlei Zhou}, {and} \bibinfo{person}{Leo~Yu Zhang}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{MARS: A Malignity-Aware Backdoor Defense in
+  Federated Learning}. In \bibinfo{booktitle}{\emph{Advances in Neural
+  Information Processing Systems}}, Vol.~\bibinfo{volume}{38}.
+\newblock
+
+
+\bibitem[Xiao et~al\mbox{.}(2017)]%
+        {xiao2017fashion}
+\bibfield{author}{\bibinfo{person}{Han Xiao}, \bibinfo{person}{Kashif Rasul},
+  {and} \bibinfo{person}{Roland Vollgraf}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{title}{{Fashion-MNIST}: a Novel Image Dataset for
+  Benchmarking Machine Learning Algorithms}.
+\newblock
+\showeprint[arxiv]{1708.07747}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1708.07747}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Yang et~al\mbox{.}(2024)]%
+        {yang2024distributed}
+\bibfield{author}{\bibinfo{person}{Yuxin Yang}, \bibinfo{person}{Qiang Li},
+  \bibinfo{person}{Jinyuan Jia}, \bibinfo{person}{Yuan Hong}, {and}
+  \bibinfo{person}{Binghui Wang}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Distributed Backdoor Attacks on Federated Graph
+  Learning and Certified Defenses}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the 2024 ACM SIGSAC Conference on Computer and Communications Security}}.
+  \bibinfo{pages}{2829--2843}.
+\newblock
+\href{https://doi.org/10.1145/3658644.3690187}{doi:\nolinkurl{10.1145/3658644.3690187}}
+
+
+\bibitem[Yin et~al\mbox{.}(2018)]%
+        {yin2018median}
+\bibfield{author}{\bibinfo{person}{Dong Yin}, \bibinfo{person}{Yudong Chen},
+  \bibinfo{person}{Kannan Ramchandran}, {and} \bibinfo{person}{Peter
+  Bartlett}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Byzantine-Robust Distributed Learning: Towards
+  Optimal Statistical Rates}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  35th International Conference on Machine Learning}},
+  Vol.~\bibinfo{volume}{80}. \bibinfo{publisher}{PMLR},
+  \bibinfo{pages}{5650--5659}.
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.mlr.press/v80/yin18a.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Zhang et~al\mbox{.}(2023)]%
+        {wang2022flip}
+\bibfield{author}{\bibinfo{person}{Kaiyuan Zhang}, \bibinfo{person}{Guanhong
+  Tao}, \bibinfo{person}{Qiuling Xu}, \bibinfo{person}{Siyuan Cheng},
+  \bibinfo{person}{Shengwei An}, \bibinfo{person}{Yingqi Liu},
+  \bibinfo{person}{Shiwei Feng}, \bibinfo{person}{Guangyu Shen},
+  \bibinfo{person}{Pin-Yu Chen}, \bibinfo{person}{Shiqing Ma}, {and}
+  \bibinfo{person}{Xiangyu Zhang}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{{FLIP}: A Provable Defense Framework for Backdoor
+  Mitigation in Federated Learning}. In \bibinfo{booktitle}{\emph{International
+  Conference on Learning Representations}}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2210.12873}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Zhang et~al\mbox{.}(2022)]%
+        {zhang2022neurotoxin}
+\bibfield{author}{\bibinfo{person}{Zhengming Zhang}, \bibinfo{person}{Ashwinee
+  Panda}, \bibinfo{person}{Linyue Song}, \bibinfo{person}{Yaoqing Yang},
+  \bibinfo{person}{Michael~W. Mahoney}, \bibinfo{person}{Joseph~E. Gonzalez},
+  \bibinfo{person}{Kannan Ramchandran}, {and} \bibinfo{person}{Prateek
+  Mittal}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Neurotoxin: Durable Backdoors in Federated
+  Learning}. In \bibinfo{booktitle}{\emph{Proceedings of the 39th International
+  Conference on Machine Learning}}, Vol.~\bibinfo{volume}{162}.
+  \bibinfo{publisher}{PMLR}, \bibinfo{pages}{26429--26446}.
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.mlr.press/v162/zhang22w.html}
+\showURL{%
+\tempurl}
+
+
+\end{thebibliography}

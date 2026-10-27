@@ -1,0 +1,57 @@
+
+\subsection{Update validation and aggregation}
+Let $w_{t-1}$ denote the committed model and $\Delta_{kt}$ the submitted update from client $k$ in the participating set $P_t$. The quorum policy first clips updates to twice the median submitted norm:
+\begin{equation}
+ \widetilde\Delta_{kt}=\Delta_{kt}\min\!\left\{1,
+ \frac{2\,\operatorname{median}_{j\in P_t}\|\Delta_{jt}\|_2}
+ {\max(\|\Delta_{kt}\|_2,10^{-12})}\right\}.
+\end{equation}
+For each proposer, validators assess the scaled candidate
+$w_{t-1}+a_{kt}\widetilde\Delta_{kt}$, where
+$a_{kt}=n_k/\sum_{j\in P_t}n_j$ and $n_k$ is the local training sample count.
+Each validator computes paired changes in cross-entropy loss on its private validation examples. A vote is affirmative when the mean loss change is at most twice its standard error; fewer than two examples yield no approval. For $E$ eligible validators excluding the proposer, the committee size and required votes are
+\begin{equation}
+ C=\min\{E,\max(3,\lceil0.3E\rceil)\},\qquad q=\lceil2C/3\rceil.
+\end{equation}
+Committees are sampled without replacement independently for each candidate. With 50 eligible clients, proposer exclusion gives $E=49$, $C=15$, and $q=10$. Eligibility and trust weights are fixed in these experiments. The approved set $S_t$ yields
+\begin{equation}
+ \bar w_t=w_{t-1}+\frac{\sum_{k\in S_t}n_k\widetilde\Delta_{kt}}
+ {\sum_{k\in S_t}n_k}.
+\end{equation}
+An empty approved set leaves the model unchanged. The clipping control retains norm clipping without the private loss-vote filter. Coordinate median uses coordinate-wise aggregation of submitted updates instead of the quorum pipeline.
+
+\subsection{Periodic repair objective}
+At scheduled rounds, periodic repair initializes a student from $\bar w_t$ and retains a frozen copy as teacher. Its convolutional layers remain fixed while the classifier is optimized. For a clean example $(x,y)$, four transformations are sampled from a bank of 147 spatial patches: black and white $2\times2$ patches and grey $4\times4$ patches on a $7\times7$ grid. The transformed view $\widetilde x$ with greatest student cross-entropy is selected separately for each example.
+
+Let $z(x)$ denote student logits, $z^0(x)$ the teacher logits, and $p_T(z)=\operatorname{softmax}(z/T)$. With $T=2$, define
+\begin{align}
+ K(x)&=T^2 D_{\mathrm{KL}}\!\left(p_T(z^0(x))\,\|\,p_T(z(x))\right),\\
+ K(\widetilde x)&=T^2 D_{\mathrm{KL}}\!\left(p_T(z^0(x))\,\|\,p_T(z(\widetilde x))\right),\\
+ U(x,\widetilde x,y)&=\sum_{c\ne y}[z_c(\widetilde x)-z_c^0(x)]_+^2.
+\end{align}
+The minibatch objective is the mean of
+\begin{equation}
+ \mathcal L=0.5\,\ell(z(\widetilde x),y)+2K(x)+2K(\widetilde x)
+             +0.1U(x,\widetilde x,y),
+\end{equation}
+Here $\ell$ denotes cross-entropy. The teacher preserves clean behavior, distillation encourages consistency across views, and the last term penalizes increases in non-label logits. The procedure uses the true labels of repair examples and does not receive the attack target or evaluation images.
+
+\subsection{Private admission and committed state}
+At each repair round, 15 nonparticipating clients are sampled without replacement and divided into five repair providers, five screening clients, and five verification clients. Each supplies at most 32 private validation examples. Client membership and examples are disjoint across the three groups. Candidate construction uses only the repair group; both other panels assess the same source and candidate.
+
+For each panel $g$, concatenate its paired per-example clean-loss changes into $d_g$. Let $\overline d_g$ be their mean, $s_g$ their sample standard deviation, and $m_g$ their count. The panel accepts only if
+\begin{align}
+ \overline d_g &\leq 0.02+2s_g/\sqrt{m_g},\\
+ \operatorname{Acc}_g(\widehat w_t)-\operatorname{Acc}_g(\bar w_t)&\geq-0.02,\\
+ \overline\ell^{\mathrm{patch}}_g(\widehat w_t)
+       -\overline\ell^{\mathrm{patch}}_g(\bar w_t)&\leq0.
+\end{align}
+Here $\ell^{\mathrm{patch}}$ is each example's maximum cross-entropy over the same transformation bank. A candidate predicting a single class on a panel containing multiple true classes is rejected. Both panels must pass; their decisions pool per-example losses within each panel, rather than applying the update committee's voting rule. These empirical criteria express utility tolerances and transformation consistency.
+
+For repair candidate $\widehat w_t$ and joint decision $b_t$, the committed model is
+\begin{equation}
+ w_t=\begin{cases}\widehat w_t,&t\in\{25,50,75,100\},\ b_t=1,\\
+                   \bar w_t,&\text{otherwise}.
+      \end{cases}
+\end{equation}
+Forced-admission controls set $b_t=1$ at scheduled rounds. The next round always starts from $w_t$. Held-out test examples measure candidate and committed outcomes after admission; their scores do not enter repair or admission.

@@ -1,0 +1,124 @@
+\section{Experimental Protocol}
+\label{sec:evaluation}
+\paragraph{Questions.}
+We evaluate how the framework changes clean utility and attack damage, whether
+windowed monitoring detects gradual degradation, how enrollment errors and
+committee capture change outcomes, and what communication and contract costs
+the additional mechanisms introduce.
+
+\paragraph{Core experiment.}
+Fashion-MNIST and CIFAR-10 use their official held-out test sets. Client training
+and private validation are partitioned from the official training pool after
+removing the common reserved reference pool. Defaults are 50 clients, 40\%
+participation, 100 rounds, one local epoch, batch size 64, learning rate 0.01,
+Dirichlet $\alpha=0.5$, and 30\% poisoning clients. Small empty shards are repaired
+deterministically to retain separate training and validation examples.
+
+The six methods are FedAvg, coordinate median, Multi-Krum, FLTrust, BOBA, and the
+two-layer framework. The five conditions are clean, sign flip, ALIE, targeted
+model replacement, and gradual poisoning. Confirmatory seeds are
+$\{13,29,47,71,101\}$; development uses $\{3,5,7\}$. The core matrix therefore
+contains 300 seed-level runs. Participants, partitions, initial models, and
+training random streams are matched across methods. Trusted-reference assumptions
+and infeasible Byzantine bounds are reported explicitly.
+The core uses a controlled participation budget: each round samples a fixed
+poisoning-client quota without replacement and fills the remaining slots from
+honest enrolled accounts. This experimental schedule supplies no attacker labels
+to the defense. It prevents uniform sampling fluctuations from silently exceeding
+the declared Byzantine budget. Uniform sampling remains available separately;
+its bound violations are reported as assumption failures.
+
+\paragraph{Attack checks.}
+Sign flip negates local deltas; ALIE replaces a malicious update with the
+coordinate mean plus standard deviation of honest reference updates. This fixed
+$z=1$ omniscient variant is motivated by ALIE~\cite{baruch2019}; it is not a
+reproduction of every parameter choice in that work. Model
+replacement combines local trigger poisoning with participant-to-attacker norm
+scaling. Gradual poisoning interpolates from an honest update toward a reversed
+update over ten rounds, with norm bounded by 1.5 times the original norm.
+Before confirmatory execution, untargeted attacks require positive mean damage
+on three development seeds against FedAvg. Targeted attacks require increased
+trigger success over a clean model evaluated with the identical trigger.
+Ineffective attacks are recorded and held for revision rather than presented as
+successful defenses.
+
+\paragraph{Sensitivity and ablations.}
+Fashion-MNIST studies vary population $N\in\{20,50,80\}$, IID versus Dirichlet
+$\alpha\in\{1,0.5,0.1\}$, and poisoning fractions 10\%, 30\%, and 50\%.
+Independent validator capture and nonzero duplicate attempts exercise the
+identity assumptions. The ablations remove recovery, remove penalties, or replace
+windowed detection with adjacent-round comparison. Benign training-distribution
+shifts and threshold sweeps test false alarms. Held-out evaluation shards are
+used for worst-client utility; private validation scores are not reused as test
+measurements.
+
+\paragraph{Metrics and uncertainty.}
+We distinguish malicious-update acceptance from targeted attack success.
+Reported outcomes include final utility, learning-curve area, attack-induced
+utility loss, utility before and after recovery, attack-presence detector FPR/FNR,
+detection delay, recovery count, worst-client utility, wrongful penalties,
+runtime, transmitted bytes, and ledger growth. A detector true positive denotes
+a flag during a round containing an attack; it does not prove causal attribution.
+Seed-level bootstrap intervals and paired differences are used; rounds are not
+independent replicates. Prespecified paired tests use Holm correction.
+
+\paragraph{New SIFT1M routing case study.}
+The original project's custom shard labels have unverifiable provenance and
+are excluded. The replacement uses the public SIFT1M archive: a database of
+one million 128-dimensional descriptors, 100,000 learning queries, and 10,000
+held-out queries~\cite{faisssift}. We recompute exact top-1000 neighbors on the
+database for both query sets using CPU FAISS IndexFlatL2. Sampled neighbor results
+and the published ground truth are checked using independent exhaustive
+float64 distance calculations. Four- and eight-shard partitions are generated
+from database vectors with centroid clustering, seed 2027 and 25 iterations.
+Each target counts actual neighbor IDs in these recorded partitions; every
+target row sums to 1000. Both query sets are scaled by 255, and EMH-DNN and MLP
+use the same top-1 shard budget. Archive and generated-array checksums preserve
+the data lineage. These are new SIFT1M experiments and cannot reproduce the
+earlier shard labels or establish billion-vector performance. Three development
+seeds screen attacks before the five-seed case-study matrix. SIFT runs use CPU
+while the classification study runs separately; concurrent wall-time measurements
+are exploratory rather than isolated overhead measurements.
+
+\paragraph{Follow-up study.}
+A separate implementation adds paper-based FedVal, natural-client FEMNIST,
+adaptive attacks and recovery controls. Its 33 development runs precede up to
+275 evaluation runs, each comparison requiring the five confirmatory seeds.
+The original core and this extension have separate source fingerprints and
+must not be pooled as one implementation. In particular, the extension requires
+local degradation attestations from at least $\lceil2C/3\rceil$ members of the
+fixed monitoring panel before applying a trend-triggered recovery. It records
+the full panel and actual attesters separately. Evidence for this strengthened
+recovery policy is pending; the earlier core cannot establish its robustness.
+
+FEMNIST uses the official 62-class TensorFlow Federated distribution derived
+from LEAF, with 50 writer clients per seed~\cite{tfffemnist}. The archive hash
+matches the checksum in the official loader. Reference examples come from
+different writers and cover every class. Enrolled writers retain their official
+held-out test examples; their training data is split into training and private
+validation. Exact pixel duplicates are removed from training and reference data,
+including matches to test images, before those partitions are formed. Test
+labels are not used in deduplication. The manifest records writer selection,
+removed duplicates, per-client counts and all generated-file hashes. We report
+lower-decile utility and exclusion rates alongside worst-client utility; these
+writer-level measurements do not establish demographic fairness.
+
+Matched Fashion-MNIST and FEMNIST comparisons use FedAvg, FLTrust, FedVal,
+validation only and the full extension. Targeted adaptive evaluation on
+Fashion-MNIST searches eight update scales using only attacker-owned training
+examples and the public model. A candidate must retain proxy clean accuracy
+within 0.02 absolute and have norm at most 1.5 times the attacker's benign update.
+This search is validated against FedAvg before defense comparisons. Its proxy
+constraints do not guarantee evasion of honest private validation.
+
+Recovery-only controls fix the attack start at round 6, restoration decision at
+round 20, and checkpoint at round 5. Continuing training, plain restoration and
+restoration with penalties share their histories before intervention. This is a
+controlled comparison with a prespecified historical checkpoint, distinct from
+end-to-end detection. Additional stress tests independently corrupt 0\%, 30\%
+or 70\% of validators for false recovery reports, and 30\% or 70\% for vote
+withholding. Uniform participation separately exposes sampled Byzantine-bound
+violations. The first completed full-framework development trace is replayed on
+the EVM with active-version and final-stake agreement checks. Runtime estimates
+from concurrent CPU preflight runs guide scheduling and do not establish
+isolated overhead or public-network latency.

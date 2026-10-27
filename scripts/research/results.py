@@ -21,6 +21,15 @@ GROUP_FIELDS = (
     "identity_false_accept_rate",
     "identity_false_reject_rate",
     "malicious_validator_fraction",
+    "duplicate_identity_fraction",
+    "protocol_version",
+    "evidence_tier",
+    "model",
+    "detector",
+    "ablation",
+    "routing_budget",
+    "config_group_hash",
+    "source_hash",
 )
 
 
@@ -36,6 +45,8 @@ def aggregate_summaries(
     rows = []
     for key, summaries in sorted(groups.items(), key=lambda item: str(item[0])):
         observed_seeds = {int(summary["seed"]) for summary in summaries}
+        if len(observed_seeds) != len(summaries):
+            raise ValueError('duplicate seed-level summaries in a comparison group')
         if require_confirmatory_seeds and observed_seeds != set(SEEDS):
             raise ValueError(
                 f"confirmatory seeds incomplete for {key}: {sorted(observed_seeds)}"
@@ -72,6 +83,21 @@ def aggregate_summaries(
         row["worst_client_utility_mean"] = float(
             np.mean([float(summary["worst_client_utility"]) for summary in summaries])
         )
+        for metric in ('mean_targeted_attack_success','mean_clean_trigger_prediction_rate',
+                       'detection_true_positive_rate','detection_false_positive_rate',
+                       'detection_false_negative_rate','detection_delay_rounds',
+                       'recovery_count','recovery_utility_gain_sum','recovery_regret_sum',
+                       'wrongful_slashing_count','unsupported_rounds','enrollment_false_accepts',
+                       'enrollment_false_rejects'):
+            values=[s.get(metric) for s in summaries]
+            if all(isinstance(v,(float,int)) for v in values):
+                row[metric+'_mean']=float(np.mean(values))
+                if len(values)>=2:
+                    interval=bootstrap_mean_ci(values,seed=20261019)
+                    row[metric+'_ci_lower']=interval.lower
+                    row[metric+'_ci_upper']=interval.upper
+            else:
+                row[metric+'_mean']=None
         if len(utilities) >= 2:
             utility_ci = bootstrap_mean_ci(utilities, seed=20260816)
             auc_ci = bootstrap_mean_ci(aucs, seed=20260816)

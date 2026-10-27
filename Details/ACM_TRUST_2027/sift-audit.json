@@ -1,0 +1,85 @@
+{
+  "status": "blocked_on_semantic_provenance",
+  "query_target_correspondence_verified": false,
+  "arrays": {
+    "gt_4M_client_counts_skewed.npy": {
+      "shape": [
+        1000000,
+        4
+      ],
+      "dtype": "int32",
+      "sha256": "84b5f78b9d3f684a1cb78abc300c390dcad13ce268a3b1bf9a7edf9d35cc59a2",
+      "minimum": 0.0,
+      "maximum": 980.0,
+      "finite": true,
+      "neighbor_count_min": 1000,
+      "neighbor_count_max": 1000
+    },
+    "gt_4M_client_counts_skewedtest.npy": {
+      "shape": [
+        10000,
+        4
+      ],
+      "dtype": "int32",
+      "sha256": "66e614368829275964d64bdf5bd70984fbe3b3a996e36682b508e8d0702fca9d",
+      "minimum": 0.0,
+      "maximum": 965.0,
+      "finite": true,
+      "neighbor_count_min": 1000,
+      "neighbor_count_max": 1000
+    },
+    "gt_8M_client_counts_skewed.npy": {
+      "shape": [
+        1000000,
+        8
+      ],
+      "dtype": "int32",
+      "sha256": "83611b01b2b887c599fec4cbe9c0c2ef4631ae0b0b354d3f3d3c77c8f71d0a53",
+      "minimum": 0.0,
+      "maximum": 674.0,
+      "finite": true,
+      "neighbor_count_min": 1000,
+      "neighbor_count_max": 1000
+    },
+    "gt_8M_client_counts_skewedtest.npy": {
+      "shape": [
+        10000,
+        8
+      ],
+      "dtype": "int32",
+      "sha256": "ce856fed6d115d4724d1af9afca2f1698f94d7c9233a6df2174ddb785ac2e63e",
+      "minimum": 0.0,
+      "maximum": 642.0,
+      "finite": true,
+      "neighbor_count_min": 1000,
+      "neighbor_count_max": 1000
+    },
+    "SIFT1B_train.npy": {
+      "shape": [
+        1000000,
+        128
+      ],
+      "dtype": "uint8",
+      "sha256": "10c293ebe312ceec3cba1a11e25901614a94288938e7990fc501042bcc1a6116",
+      "minimum": 0.0,
+      "maximum": 243.0,
+      "finite": true
+    },
+    "SIFT_test_query.npy": {
+      "shape": [
+        10000,
+        128
+      ],
+      "dtype": "float64",
+      "sha256": "ed89aa0582c18807de63e299d1f2917bd7aa1816595e7a5f889b02fa24deca71",
+      "minimum": 0.0,
+      "maximum": 230.0,
+      "finite": true
+    }
+  },
+  "missing_evidence": [
+    "Original query ordering and nearest-neighbor target generation metadata",
+    "Documented preprocessing and normalization for both train features and held-out queries",
+    "Shard assignment and neighbor-index provenance"
+  ]
+}

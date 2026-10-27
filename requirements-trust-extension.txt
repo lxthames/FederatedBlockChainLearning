@@ -1,0 +1,2 @@
+-r requirements-trust.txt
+h5py==3.15.1

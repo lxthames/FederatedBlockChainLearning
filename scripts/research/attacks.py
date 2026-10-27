@@ -17,13 +17,13 @@ class AttackContext:
     peer_updates: tuple[ClientUpdate, ...] = ()
 
 
-def _replace_state(update: ClientUpdate, state: Mapping[str, object]) -> ClientUpdate:
+def _replace_state(update: ClientUpdate, state: Mapping[str, object], metadata=None) -> ClientUpdate:
     return ClientUpdate(
         client_id=update.client_id,
         state=state,
         sample_count=update.sample_count,
         is_malicious=update.is_malicious,
-        metadata=update.metadata,
+        metadata=update.metadata if metadata is None else metadata,
     )
 
 
@@ -56,7 +56,17 @@ class ALIEAttack:
 
     def apply(self, update: ClientUpdate, context: AttackContext) -> ClientUpdate:
         if len(context.peer_updates) < 2:
-            raise ValueError("ALIE requires at least two reference peer updates")
+            # ALIE is defined from peer statistics.  A layered trust policy can
+            # legitimately leave fewer than two honest updates in a round; in
+            # that case the attacker cannot construct the perturbation.  Keep
+            # the submitted local update and record the operational shortfall
+            # so the run remains auditable instead of aborting mid-trajectory.
+            return _replace_state(update, update.state, {
+                **update.metadata,
+                'attack_applied': False,
+                'attack_reason': 'insufficient_reference_peers',
+                'reference_peer_count': len(context.peer_updates),
+            })
         state: dict[str, object] = {}
         for name, original in update.state.items():
             if not isinstance(original, torch.Tensor) or not original.is_floating_point():
@@ -64,7 +74,11 @@ class ALIEAttack:
                 continue
             peers = torch.stack([peer.state[name] for peer in context.peer_updates])
             state[name] = peers.mean(dim=0) + self.z_max * peers.std(dim=0, unbiased=False)
-        return _replace_state(update, state)
+        return _replace_state(update, state, {
+            **update.metadata,
+            'attack_applied': True,
+            'reference_peer_count': len(context.peer_updates),
+        })
 
 
 class LowAndSlowAttack:
@@ -78,7 +92,9 @@ class LowAndSlowAttack:
 
     def apply(self, update: ClientUpdate, context: AttackContext) -> ClientUpdate:
         progress = min(max(context.round_index, 0) / self.ramp_rounds, 1.0)
-        scale = 1.0 + (self.max_scale - 1.0) * progress
+        # Bounded interpolation toward a sign-reversed update; at full ramp it
+        # actively opposes descent, rather than amplifying an honest update.
+        scale = 1.0 - (1.0 + self.max_scale) * progress
         state = {
             name: value * scale
             if isinstance(value, torch.Tensor) and value.is_floating_point()

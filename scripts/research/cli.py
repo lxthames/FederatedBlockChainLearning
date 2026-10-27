@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from .config import ExperimentConfig
-from .dataio import load_experiment_arrays
+from .dataio import load_experiment_data
 from .matrix import ExperimentMatrix
 from .models import create_model
 from .runner import BenchmarkRunner
@@ -21,10 +21,10 @@ def _run(args: argparse.Namespace) -> int:
 def _execute_config(
     config: ExperimentConfig, output: Path, data_root: str | Path
 ) -> dict[str, object]:
-    features, labels = load_experiment_arrays(config, data_root)
+    features, labels, test_arrays = load_experiment_data(config, data_root)
     outputs = labels.shape[1] if labels.ndim == 2 else int(labels.max()) + 1
-    factory = lambda: create_model(config.dataset, tuple(features.shape[1:]), outputs)
-    summary = BenchmarkRunner(config, output).run_arrays(features, labels, factory)
+    factory = lambda: create_model(config.dataset, tuple(features.shape[1:]), outputs, config.model)
+    summary = BenchmarkRunner(config, output).run_arrays(features, labels, factory, test_arrays)
     (output / "summary.json").write_text(
         json.dumps(summary, indent=2, sort_keys=True), encoding="utf-8"
     )
@@ -44,8 +44,21 @@ def _run_manifest(args: argparse.Namespace) -> int:
     for config in configs:
         output = output_root / config.experiment_id
         if args.resume and (output / "summary.json").exists():
+            previous = json.loads((output/'summary.json').read_text(encoding='utf-8'))
+            import hashlib
+            expected = hashlib.sha256(json.dumps(config.to_dict(),sort_keys=True).encode()).hexdigest()
+            if previous.get('config_hash') != expected:
+                raise ValueError(f'configuration mismatch for completed run {config.experiment_id}')
+            source_hash=hashlib.sha256(b''.join(p.read_bytes() for p in sorted(Path(__file__).parent.glob('*.py')))).hexdigest()
+            if previous.get('source_hash') != source_hash:
+                raise ValueError(f'source mismatch for completed run {config.experiment_id}')
             counts["skipped"] += 1
             continue
+        if output.exists() and any(output.iterdir()):
+            # Preserve interrupted logs and restart the whole seed into a fresh
+            # directory; optimizer/checkpoint-level resume is not claimed.
+            import time
+            output.rename(output.with_name(output.name+f'.interrupted-{time.time_ns()}'))
         try:
             _execute_config(config, output, args.data_root)
             counts["completed"] += 1
@@ -58,6 +71,7 @@ def _run_manifest(args: argparse.Namespace) -> int:
                     "message": str(error),
                 }
             )
+        (output_root / 'batch-summary.json').write_text(json.dumps(counts,indent=2),encoding='utf-8')
     (output_root / "batch-summary.json").write_text(
         json.dumps(counts, indent=2, sort_keys=True), encoding="utf-8"
     )

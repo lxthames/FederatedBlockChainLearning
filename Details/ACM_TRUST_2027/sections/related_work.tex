@@ -1,0 +1,57 @@
+\section{Related Work}
+\paragraph{Robust aggregation and heterogeneity.}
+FedAvg aggregates data-weighted local updates~\cite{mcmahan2017}.
+Krum selects updates using inter-update distances~\cite{blanchard2017};
+coordinate median uses coordinate-wise order statistics~\cite{yin2018}.
+FLTrust introduces a trusted server reference update and combines directional
+alignment with norm normalization~\cite{cao2021}. BOBA addresses label skewness
+through robust affine-subspace estimation and label-distribution
+filtering~\cite{bao2024}. Their assumptions differ: the proposed committee has
+private validation examples, while FLTrust and BOBA receive designated trusted
+reference examples. These differences are reported alongside results instead of
+being hidden in a single robustness ranking.
+FedVal scores updates using server validation losses and balances class-level
+performance~\cite{valadi2023}. This is a particularly relevant comparator:
+private committee validation changes the location and distribution of the
+reference information, but does not by itself establish fairer evaluation.
+Our follow-up implementation uses the published scoring rule and records
+differences from the released software. Recent theoretical work studies
+cooperative identification of data-poisoned workers~\cite{yu2026}; its assumptions
+do not directly supply guarantees against arbitrary submitted model updates.
+
+\paragraph{Detection and adaptive backdoors.}
+FLDetector identifies clients whose updates repeatedly disagree with predictions
+from their update history~\cite{zhang2022detector}. Our monitor tracks committee
+utility trends without identifying a poisoning client. FLAME combines
+clustering, clipping and noise for backdoor
+defense~\cite{nguyen2022flame}. Model replacement and constrain-and-scale attacks
+demonstrate why maintaining clean accuracy can coexist with a harmful
+backdoor~\cite{bagdasaryan2020}. Consequently, neither a reversed-update ramp
+nor untargeted accuracy degradation alone evaluates adaptive evasion. Our
+follow-up search uses attacker-owned proxy examples and a clean-utility
+constraint; it is a bounded attack, not an optimal-adversary guarantee.
+
+\paragraph{Blockchain-assisted learning.}
+Biscotti combines a ledger with privacy and robustness mechanisms~\cite{shayan2022}.
+Recent work also studies verification of local training and aggregation:
+VerifBFL uses zk-SNARKs and incrementally verifiable computation and includes
+differential privacy~\cite{bellachia2025}. Our local-EVM prototype makes a weaker
+verification claim. Its contracts enforce authorization, vote uniqueness, quorum,
+and stake transitions; they do not verify numerical training or privately
+computed quality reports. Consequently, neither raw-data locality nor a hash
+commitment is described as a formal privacy guarantee.
+
+\paragraph{Recovery after poisoning.}
+FedRecover uses historical information to reduce recovery
+costs~\cite{cao2023recover}. Crab investigates efficient and certified
+recovery~\cite{jiang2024}. The 2026 FAUN preprint uses adversarial unlearning
+and a short history of malicious updates~\cite{zhao2026}.
+Our recovery operation restores a historical checkpoint, preserves ledger history,
+and attributes responsibility to recorded approvals. It provides neither certified
+unlearning nor a guarantee that the restored checkpoint is clean. These recovery
+methods motivate explicit measurements of residual damage and recovery cost;
+their reported numbers are not transferred into our experimental tables.
+We therefore compare continuing training with plain restoration and restoration
+with attributed penalties under the same prespecified intervention time and
+checkpoint. These controls isolate the consequences of restoration and sanctions;
+they are not implementations of FedRecover or Crab.

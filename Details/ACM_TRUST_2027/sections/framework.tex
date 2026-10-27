@@ -1,0 +1,70 @@
+\section{Two-Layer Validation and Recovery}
+\label{sec:framework}
+\input{figures/system}
+\subsection{Layer 1: Eligibility and Validation}
+For candidate client $k$, let $E$ be the number of eligible validators after
+excluding $k$. Enrollment, minimum stake, and the configured trust threshold
+determine eligibility. The committee size and approval threshold are
+\begin{equation}
+ C=\min\{E,\max\{3,\lceil0.3E\rceil\}\},\qquad
+ q=\lceil2C/3\rceil.
+\end{equation}
+When $E<3$, validation is unsupported; it is never replaced with a one-member
+committee. For example, four enrolled eligible clients give a three-member
+committee after excluding the proposer and require two affirmative votes.
+Each candidate receives an independently sampled committee with a reproducible
+random stream. Committees are sampled independently of participant selection.
+
+Validator $j$ evaluates the candidate and current model on the same private
+validation partition. With utility $u_j$, its normalized change is
+\begin{equation}
+ d_{jk}=\frac{u_j(w+\Delta_k)-u_j(w)}{\max\{|u_j(w)|,10^{-12}\}}.
+\end{equation}
+The default approval rule is $d_{jk}\geq-0.05$. A candidate requires $q$
+distinct affirmative signers; repeated votes cannot increase support.
+The median normalized change is recorded diagnostically and is not substituted
+for quorum. Accepted updates are aggregated as
+\begin{equation}
+ w'=w+\frac{\sum_{k\in A} n_k\tau_k\Delta_k}{\sum_{k\in A}n_k\tau_k},
+\end{equation}
+where $A$ is the approved set, $n_k$ is its training sample count, and $\tau_k$
+is recorded trust. Empty or unsupported approval sets produce explicit no-op
+rounds. Trust changes follow recorded approval or rejection outcomes, with
+additional penalties after recovery. They do not use ground-truth attacker labels.
+Trust starts at $0.5$; validator eligibility requires $\tau_k\geq0.45$, while
+candidate training stops below the floor $0.15$. Approval adds $0.02$ trust;
+rejection or a recovery-attributed penalty subtracts $0.15$, clipped to $[0,1]$.
+Initial stake is 20 credits, eligibility requires 10, and an attributed penalty
+deducts five. These are prespecified starting values rather than theoretically
+optimal thresholds. Eligibility sensitivity includes $0.30$, $0.45$, and $0.50$;
+its outcomes are needed to justify a final deployment choice.
+
+\subsection{Layer 2: Monitoring a Fixed Panel}
+A panel is fixed for a window of five observations, including the baseline
+before its first candidate round. Panel members evaluate consecutive versions
+on their private validation partitions. Keeping panel membership constant within
+the window reduces score changes caused solely by resampling validators.
+Let $s_i$ be the median panel utility at observation $i$. With $W=5$, the monitor
+compares the latest score with the mean of preceding window scores and fits
+a least-squares linear slope:
+\begin{equation}
+ D=\frac{\overline{s}_{1:W-1}-s_W}{\max\{|\overline{s}_{1:W-1}|,10^{-12}\}}.
+\end{equation}
+A relative drop above $0.05$ or a slope below $-0.005$ triggers recovery.
+An adjacent-round detector is evaluated separately. Thresholds are prespecified
+and their sensitivity is measured using development seeds. Non-IID data and benign
+drift can trigger both monitors, so detection does not prove an attack occurred.
+
+\subsection{Append-Only Recovery and Accountability}
+Every model version has a commitment, parent pointer, and off-chain checkpoint.
+After a flagged window, recovery restores the checkpoint preceding that window.
+The contract appends the invalidated interval, restored version, monitoring-panel
+attestations, and penalty events. Earlier commitments remain retrievable.
+The restored checkpoint is historical and may contain older poisoning.
+
+Only affirmative signers of commitments in the invalidated interval are eligible
+for penalties. A signer is penalized at most once per recovery event. Rejected
+votes and nonparticipants are not penalized. Stake and trust changes persist after
+model restoration; the detector history resets and a new panel is selected.
+Because honest signers can approve harmful updates or a monitor can misfire,
+wrongful penalties are a primary outcome rather than an omitted corner case.

@@ -1,0 +1,43 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 2,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 3,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 4,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 5,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 6,
+      "width": 612.0,
+      "height": 792.0
+    }
+  ],
+  "page_count": 6,
+  "draft": true,
+  "overfull_boxes": 0,
+  "undefined_references": false,
+  "visual_qa": "passed: all six final rendered pages inspected; no overlap or clipping",
+  "submission_ready": false,
+  "reason": "Core, SIFT and extension evidence incomplete; protocol-version coverage reconciliation and final author review required",
+  "pdf_sha256": "adaae8573f35132947d877e344285f519335d0db39793c59f18f0d1ce2525da8",
+  "metadata_author": ""
+}

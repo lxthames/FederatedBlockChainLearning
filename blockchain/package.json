@@ -1,0 +1,7 @@
+{
+  "name": "trust-2027-local-evm",
+  "private": true,
+  "type": "module",
+  "scripts": {"node": "hardhat node --network hardhat --hostname 127.0.0.1", "compile": "node compile.mjs"},
+  "devDependencies": {"hardhat": "3.7.0", "solc": "0.8.30"}
+}

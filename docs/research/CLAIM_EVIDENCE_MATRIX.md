@@ -1,6 +1,8 @@
 # Claim-to-Evidence Matrix
 
-The submitted manuscript must be added before final prose revision. Until then, the claims visible in the GLOBECOM reviews are governed as follows.
+The original source is available in `Details/GlobecomManuscript/main.tex`.
+The revised framework manuscript and issue tracker are in `Details/ACM_TRUST_2027/`.
+The restrictions below remain in force until the v2 evidence is complete.
 
 | Prior claim | Status | Required evidence or revision |
 |---|---|---|

@@ -1,5 +1,13 @@
 # Federated Blockchain Learning
 
+## ACM TRUST 2027 revision
+
+Use the disjoint-split v2 workflow in [the TRUST runbook](docs/research/TRUST_2027_RUNBOOK.md).
+The manuscript project is [Details/ACM_TRUST_2027](Details/ACM_TRUST_2027/README.md).
+Background progress is recorded in `artifacts/trust-2027/status.json`.
+Earlier smoke and diagnostic outputs are excluded from publication evidence.
+The draft is not submission-ready until the experiment and author-review gates pass.
+
 > **Research status:** The original 4/8-client outputs and legacy `scripts/run.py`
 > are pilot artifacts, not publication evidence. New journal experiments must use
 > the tested `scripts.research` harness and

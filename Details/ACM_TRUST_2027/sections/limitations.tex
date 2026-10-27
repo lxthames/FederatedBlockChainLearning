@@ -1,0 +1,24 @@
+\section{Limitations and Responsible Use}
+Private validation partitions can differ systematically across clients, so median
+quality is not an unbiased estimator of global utility. Fixed-panel monitoring
+reduces one source of score variation but cannot distinguish every benign drift
+from poisoning. Detector error rates and utility before and after recovery must be
+interpreted together.
+
+Checkpoint restoration can lose useful progress and leave earlier poison intact.
+Wrongful penalties can exclude honest validators and reduce future committee
+availability. Stake requirements also create participation barriers. These effects
+limit any claim that staking alone makes an attack unprofitable. A utility model
+and strategic-adversary analysis would be needed for such a claim.
+
+The local EVM provides contract execution and transaction receipts on one host.
+It does not measure network partitions, distributed consensus, adversarial block
+production, or production checkpoint availability. The trusted registrar and
+orchestrator are material deployment assumptions. Metric releases and individual
+model updates retain privacy risks, and an anonymous deployment would require a
+separate enrollment mechanism.
+
+Classification findings require separate validation for search routing.
+The new SIFT1M labels have explicit provenance, but the case-study outcomes
+remain pending. Their sharding differs from the original pilot, so numerical
+comparisons with its reported recall would be invalid.

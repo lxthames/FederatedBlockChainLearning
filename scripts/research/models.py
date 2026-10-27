@@ -5,7 +5,14 @@ import math
 import torch.nn as nn
 
 
-def create_model(dataset: str, input_shape: tuple[int, ...], outputs: int) -> nn.Module:
+def create_model(dataset: str, input_shape: tuple[int, ...], outputs: int, model: str = "default") -> nn.Module:
+    if model == 'emh_dnn':
+        if dataset != 'sift_routing':
+            raise ValueError('EMH-DNN is defined for routing')
+        from scripts.core.models import EnhancedMultiHeadDNN
+        return EnhancedMultiHeadDNN(math.prod(input_shape), outputs)
+    if model == 'mlp':
+        return nn.Sequential(nn.Flatten(), nn.Linear(math.prod(input_shape),64), nn.ReLU(), nn.Linear(64,outputs))
     if dataset == "fashion_mnist":
         return nn.Sequential(
             nn.Conv2d(1, 16, 3, padding=1),

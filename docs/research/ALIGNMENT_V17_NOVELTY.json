@@ -1,0 +1,46 @@
+{
+  "assessment_date": "2026-10-21",
+  "scope": "Targeted primary-source mechanism audit; sufficient to motivate a bounded diagnostic, not a systematic priority or novelty certification.",
+  "supports_bounded_development": true,
+  "novelty_established": false,
+  "publication_ready": false,
+  "potential_distinction": "Test hard predicted-class frequency contrasts and preserve transformation/class identity before cross-validator order statistics, on the exact quorum-admitted aggregate. The factorial diagnostic must establish an incremental effect beyond probability-based independent maxima.",
+  "sources": [
+    {
+      "title": "CrowdGuard: Federated Backdoor Detection in Federated Learning",
+      "url": "https://arxiv.org/html/2210.07714",
+      "overlap": "Private-client feedback, behavioral hidden-layer analysis, pruning and vote aggregation already exist.",
+      "difference_to_test": "Output-label transformation-specific cross-validator order statistic on the deployed aggregate rather than hidden-layer pruning of individual models. This is a positioning hypothesis, not proof of priority."
+    },
+    {
+      "title": "Backdoor Defense in Federated Learning Using Differential Testing and Outlier Detection",
+      "url": "https://arxiv.org/html/2202.11196",
+      "sections": "3.2-3.5",
+      "overlap": "Prediction-based differential testing and robust MAD outlier filtering are established.",
+      "difference_to_test": "Fixed aligned spatial challenges on disjoint private validators, a common normalized aggregate and hard-class contrasts, rather than optimizing shared validation inputs to separate local-model clusters."
+    },
+    {
+      "title": "Towards a Defense against Backdoor Attacks in Continual Federated Learning",
+      "url": "https://arxiv.org/html/2205.11736",
+      "overlap": "Cumulative backdoor leakage and the insufficiency of partial per-round filtering are established.",
+      "difference_to_test": "An absolute aggregate behavior gate; no parallel shadow model or target-label early stopping. Do not claim discovery of persistence."
+    },
+    {
+      "title": "FLShield: A Validation Based Federated Learning Framework to Defend Against Poisoning Attacks",
+      "url": "https://arxiv.org/abs/2308.05832",
+      "overlap": "Validation using private participant data and robustness under heterogeneous access are established. Prior repository audits cover representative models and class-wise loss impact.",
+      "difference_to_test": "Label-change alignment across shared transformations on a final aggregate, rather than representative-model class-wise clean-loss validation."
+    },
+    {
+      "title": "BackdoorIndicator: Leveraging OOD Data for Proactive Backdoor Detection in Federated Learning",
+      "url": "https://www.usenix.org/conference/usenixsecurity24/presentation/li-songze",
+      "overlap": "Attack-target-agnostic behavioral indicators are established.",
+      "difference_to_test": "No injected indicator training task or central OOD dataset; finite local perturbation evaluation only."
+    }
+  ],
+  "submission_requirements": [
+    "Show a specific scoring effect with matched examples, panels and training, not merely a combination of existing defenses.",
+    "Audit additional recent related work and reproduce the closest baselines before claiming novelty or superiority.",
+    "Independent confirmation, unseen triggers and defense-aware attacks remain outside this development authorization."
+  ]
+}

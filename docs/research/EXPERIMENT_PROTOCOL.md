@@ -1,5 +1,11 @@
 # Preregistered Experiment Protocol
 
+> Superseded for the ACM TRUST 2027 revision by `scripts.research.trust_matrix`
+> and `TRUST_2027_RUNBOOK.md`. The approved v2 core has six methods, clean
+> controls, 40% participation, disjoint splits, and five confirmatory seeds.
+> Retain this earlier journal protocol for provenance; do not mix its manifests
+> or pilot outputs into the TRUST confirmatory analysis.
+
 ## Primary research questions
 
 1. How do non-IID data and scale change clean utility, attack impact, and detector errors?

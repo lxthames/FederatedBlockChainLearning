@@ -309,7 +309,9 @@ class BOBADefense:
         if len(accepted_indices) < keep_count:
             accepted_indices = minimum_coefficients.topk(keep_count).indices.tolist()
         accepted_indices = sorted(accepted_indices)
-        aggregate_vector = matrix[accepted_indices].mean(dim=0)
+        # BOBA reconstructs the accepted latent mean on the fitted affine
+        # subspace; averaging original vectors would undo stage-one filtering.
+        aggregate_vector = latent[accepted_indices].mean(dim=0) @ basis + mean
         accepted = tuple(updates[index].client_id for index in accepted_indices)
         rejected = tuple(
             update.client_id

@@ -1,0 +1,57 @@
+\documentclass[sigconf,anonymous]{acmart}
+\usepackage{amsmath,booktabs,tikz}
+\usetikzlibrary{positioning,arrows.meta,fit,backgrounds}
+\setcopyright{none}
+\settopmatter{printacmref=false}
+\acmConference[TRUST '27]{ACM Conference on Trustworthy and Responsible AI and Computing Systems}{March 7--9, 2027}{Washington, DC, USA}
+\acmYear{2027}
+\acmDOI{}
+\acmISBN{}
+\title{Accountable Model Recovery for Blockchain-Assisted Federated Learning}
+\author{Anonymous Author(s)}
+\begin{document}
+\begin{abstract}
+Federated learning committees can approve harmful updates even when identities
+are authenticated. Recording such approvals on a blockchain provides an audit
+trail, but does not remove their effects from a learned model. We specify a
+two-layer framework combining private local validation with accountable,
+application-level model recovery. A rotating committee evaluates candidate
+updates without pooling validation examples. A windowed monitor compares model
+quality over time, and an append-only recovery transaction identifies an earlier
+checkpoint and the affirmative signers associated with invalidated versions.
+Enrollment uniqueness remains an external assumption, and quality reports are
+attestations rather than cryptographic proofs of poisoning. The implementation
+connects a reproducible federated-learning runner to Solidity contracts deployed
+on a local EVM. We define matched evaluations on Fashion-MNIST and CIFAR-10,
+including heterogeneous data, compromised validators, enrollment errors, and
+ablation studies. Confirmatory robustness results remain pending; the present
+draft reports implementation validation separately from scientific evidence.
+\end{abstract}
+\ccsdesc[500]{Security and privacy~Distributed systems security}
+\ccsdesc[300]{Computing methodologies~Machine learning}
+\keywords{federated learning, model poisoning, accountability, blockchain, recovery}
+\maketitle
+\begin{center}
+\fbox{\parbox{0.95\columnwidth}{\textbf{Working research draft.}
+Core, SIFT and follow-up experiments are incomplete.
+This PDF is not yet ready for submission.}}
+\end{center}
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/threat_model}
+\input{sections/framework}
+\input{sections/implementation}
+\input{sections/evaluation}
+\input{sections/results}
+\input{sections/limitations}
+\input{sections/conclusion}
+\section*{GenAI Usage Disclosure}
+An AI coding assistant was used to assist with implementation changes, experiment
+orchestration, literature discovery, manuscript drafting, and figure construction.
+The authors must review the implementation, verify citations and experimental
+artifacts, and accept responsibility for the final manuscript. This statement
+describes the assistance used during preparation and must be reviewed by the
+authors before submission.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+\end{document}

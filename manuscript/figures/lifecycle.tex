@@ -1,0 +1,20 @@
+
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}[node distance=5mm,box/.style={draw=black!65,fill=black!8,rounded corners=2pt,align=center,font=\small,minimum height=11mm,text width=23mm},arr/.style={->,>=stealth,thick,draw=black!70}]
+\node[box] (updates) {Client updates};
+\node[box,right=of updates] (aggregate) {Policy-specific aggregation};
+\node[box,right=of aggregate] (repair) {Scheduled repair candidate};
+\node[box,right=of repair] (admit) {Private screen and verification};
+\node[box,right=of admit,fill=black!20] (commit) {Committed model $w_t$};
+\draw[arr] (updates)--(aggregate);
+\draw[arr] (aggregate)--(repair);
+\draw[arr] (repair)--(admit);
+\draw[arr] (admit)-- (commit);
+\draw[arr] (aggregate.south)--++(0,-.7) -| node[pos=.25,below,font=\scriptsize]{no repair, or retain source on rejection} (commit.south);
+\draw[arr] (commit.north)--++(0,.6)-| node[pos=.5,above,font=\scriptsize]{next round starts from the committed model} (updates.north);
+\end{tikzpicture}
+\caption{Model lifecycle. Repair and admission use disjoint private client groups. Held-out test measurements follow the commit decision and have no feedback path into the policy. Non-repair baselines follow the direct aggregation-to-commit path.}
+\Description{Five stages connect updates, aggregation, scheduled repair, private admission, and the committed model. A bypass retains the source when repair is absent or rejected, and a feedback arrow starts the next training round.}
+\label{fig:lifecycle}
+\end{figure*}

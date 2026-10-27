@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\caption{Rejected repairs in attacked conditions, pooled descriptively over both triggers, both schedules, and four interventions per trajectory. Source is also the retained committed model. ASR and accuracy are percentages. Strong reduction counts source ASR $\geq50\%$ and candidate ASR $\leq10\%$; the last column additionally requires a clean-accuracy loss of at most two percentage points.}
+\label{tab:candidates}
+\centering\small\begin{tabular}{llrrrrrrr}
+\toprule
+Dataset & Policy & Rejected & Source ASR & Cand. ASR & Source acc. & Cand. acc. & Strong & Utility kept \\
+\midrule
+FEMNIST & Periodic & 16 & 93.74 & 44.65 & 72.58 & 72.34 & 5 & 5 \\
+Fashion-MNIST & Periodic & 9 & 99.69 & 42.28 & 76.23 & 76.15 & 3 & 3 \\
+FEMNIST & Fine-tune & 78 & 95.14 & 93.90 & 66.49 & 66.46 & 0 & 0 \\
+Fashion-MNIST & Fine-tune & 55 & 84.12 & 81.25 & 78.25 & 78.68 & 0 & 0 \\
+FEMNIST & Fine-Pruning & 68 & 92.77 & 83.03 & 66.05 & 64.78 & 0 & 0 \\
+Fashion-MNIST & Fine-Pruning & 56 & 78.41 & 60.39 & 78.12 & 76.65 & 3 & 0 \\
+FEMNIST & NAD-style & 76 & 95.22 & 93.94 & 66.31 & 66.25 & 0 & 0 \\
+Fashion-MNIST & NAD-style & 54 & 83.66 & 80.53 & 78.80 & 78.84 & 0 & 0 \\
+\bottomrule\end{tabular}
+\end{table*}

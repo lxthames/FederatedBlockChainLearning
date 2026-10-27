@@ -1,0 +1,13 @@
+\begin{table*}[t]
+\caption{Private-admission decisions across clean and attacked conditions. A criterion is counted once per rejected attempt when either panel violates it. Counts overlap. Main-comparison controls are used once; NAD uses the companion comparison.}
+\label{tab:gates}
+\centering\small\begin{tabular}{lrrrrrr}
+\toprule
+Policy & Attempts & Rejected & Clean loss & Accuracy & Patch loss & Collapse \\
+\midrule
+Periodic & 200 & 33 & 4 & 26 & 5 & 0 \\
+Fine-tune & 200 & 170 & 33 & 90 & 159 & 0 \\
+Fine-Pruning & 200 & 161 & 60 & 104 & 130 & 0 \\
+NAD-style & 200 & 167 & 34 & 91 & 158 & 0 \\
+\bottomrule\end{tabular}
+\end{table*}

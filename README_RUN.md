@@ -1,5 +1,9 @@
 # How to Run Experiments
 
+> For the ACM TRUST 2027 revision, follow
+> [TRUST_2027_RUNBOOK.md](docs/research/TRUST_2027_RUNBOOK.md).
+> The legacy commands below reproduce the original pilot only.
+
 ## Quick Start
 
 ```bash

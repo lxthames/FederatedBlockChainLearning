@@ -1,0 +1,16 @@
+{
+  "core_runs_completed": 294,
+  "core_runs_expected": 300,
+  "complete_comparison_cells": 58,
+  "missing_core_experiments": [
+    "trust-core-fashion_mnist-two_layer-alie-s47-51a655e8d392",
+    "trust-core-fashion_mnist-two_layer-alie-s71-9b5c0ac58dc8",
+    "trust-core-fashion_mnist-two_layer-alie-s101-dac62fd9bbbb",
+    "trust-core-cifar10-two_layer-alie-s13-6a1edaa2b52d",
+    "trust-core-cifar10-two_layer-alie-s47-78f8ba82756e",
+    "trust-core-cifar10-two_layer-alie-s101-330ba6127402"
+  ],
+  "sift_provenance_available": false,
+  "submission_ready": false,
+  "reason": "Author claim audit, SIFT provenance and visual QA required in addition to completed experiments"
+}

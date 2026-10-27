@@ -1,0 +1,29 @@
+\section{Threat Model and Assumptions}
+\label{sec:threat}
+There are $N$ enrolled client accounts. Some control unique identities; others
+may represent duplicate enrollment attempts. A trusted external registrar models
+identity uniqueness with configurable false-accept and false-reject rates.
+The prototype does not implement biometric, social-graph, or other
+Proof-of-Personhood verification. Independently enrolled colluding participants
+therefore remain in scope even when enrollment makes no errors.
+
+The adversary can poison local updates and independently compromise validators.
+Corrupted validators may approve poisoned updates, reject honest updates, or
+report inflated monitoring quality. The experiment driver knows attacker labels
+for injection and scoring. Honest validation, eligibility, aggregation, and
+recovery do not receive these labels. ALIE experiments assume access to honest
+reference updates and are labeled as an omniscient-adversary setting.
+
+The registrar, off-chain experiment orchestrator, model aggregation computation,
+and checkpoint store are trusted. The ledger authenticates account transactions
+and enforces its contract state machine. It does not prove that a reported score
+was obtained from an authentic validation partition. In particular, a malicious
+majority or a biased committee can defeat the quality monitor.
+
+Client data is divided into disjoint training and private validation partitions.
+Held-out test examples are used exclusively for reporting. Trusted server
+reference examples are reserved separately for methods that require them, and
+are removed from all client partitions. Raw validation examples remain local;
+model updates and released metrics may still leak information. Secure aggregation,
+differential privacy, and a production identity service are outside this
+implementation's guarantees.

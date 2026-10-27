@@ -1,0 +1,36 @@
+\section{Implementation and Complexity}
+\label{sec:implementation}
+The Python runner implements deterministic data partitions, separate random
+streams, batched evaluation, and CPU or CUDA training. Each run preserves its
+configuration, content fingerprints, split indices, JSONL event log, model-version
+trace, and summary. Completed runs are immutable. Interrupted seeds are restarted
+into fresh directories while retaining the earlier logs.
+
+Solidity contracts are compiled with optimization and deployed to a persistent
+local Hardhat EVM. Account transactions authenticate votes. Candidate identifiers
+bind the chain, contract, experiment, round, base version, proposer, and update
+hash. The contract checks enrollment, stake, proposer exclusion, distinct
+committee members, vote uniqueness, and quorum. Recovery requires a quorum of
+panel attestations. The experiment orchestrator remains responsible for selecting
+the committee and computing model aggregation.
+
+For each transaction, the adapter records its receipt, gas used, calldata size,
+and local elapsed time. These are measured execution costs on a development chain,
+not estimates of public-network confirmation latency. Stake credits use a fixed
+conversion of one credit to $10^9$ wei for reproducible accounting; this arbitrary
+unit does not establish an economic incentive model.
+
+If $P$ clients participate, $C$ validators assess each candidate, and model updates
+contain $d$ scalars, candidate distribution requires $O(PCd)$ transmitted scalar
+values, plus model broadcast and monitoring reports. Validation can dominate
+training when many committees repeatedly evaluate candidates. On-chain candidate
+snapshots and votes grow as $O(PC)$ per round. Recovery scans the flagged interval
+and its affirmative signers. Local execution of those loops does not demonstrate
+that all intervals fit production gas limits.
+
+\input{figures/emh}
+The routing case study uses two parallel $128$-unit branches, complementary
+dropout rates of $0.30$ and $0.15$, mean fusion, and one scalar output per shard.
+The input contains 128 dimensions. With $N$ shards, the output heads add $129N$
+parameters; this linear growth is measured separately from the security protocol.
+No architectural convergence or catastrophic-forgetting guarantee is claimed.

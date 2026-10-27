@@ -1,0 +1,17 @@
+
+\subsection{Deployment-horizon metrics}
+Let $\mathcal D^-_{\mathrm{test}}=\{(x_i,y_i):y_i\ne y^*\}$ exclude the target class $y^*=0$, and let $\tau$ apply the attack trigger. For the model committed after round $t$,
+\begin{equation}
+ A_t=\frac{1}{|\mathcal D^-_{\mathrm{test}}|}
+ \sum_{(x_i,y_i)\in\mathcal D^-_{\mathrm{test}}}
+ \mathbf1\{\arg\max f_{w_t}(\tau(x_i))=y^*\}.
+\end{equation}
+We summarize each seeded trajectory using
+\begin{align}
+ A_{\mathrm{end}}&=A_{100},\\
+ A_{\mathrm{onset}}&=\frac1{90}\sum_{t=11}^{100}A_t,\\
+ A_{\mathrm{stop}}&=\frac1{50}\sum_{t=51}^{100}A_t.
+\end{align}
+The last metric applies only to attacker-stop poisoning. Each round has equal weight; these means describe exposure under a uniform deployment-round distribution, rather than measured user request volumes. Clean accuracy uses the unmodified test set. All measurements occur after that round's admission decision, so the endpoint at round 100 coincides with the last scheduled repair.
+
+For policy $h$ and matching quorum control $q$, let $M_{hs}$ and $M_{qs}$ be a trajectory-level metric for seed $s$. We compute paired differences $d_s=M_{hs}-M_{qs}$ and their mean across five seeds. Percentile bootstrap intervals use 10,000 resamples of the five seed pairs with replacement, taking the 2.5th and 97.5th percentiles of resampled means. Differences in ASR are expressed in percentage points. These intervals summarize seed variation within this design; they are pointwise intervals rather than simultaneous bounds over all comparisons.

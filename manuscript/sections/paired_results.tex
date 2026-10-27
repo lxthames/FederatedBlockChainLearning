@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\caption{Paired ASR differences relative to quorum in the companion comparison (percentage points). Entries are five-seed means with pointwise 95\% bootstrap intervals. Negative values favor the listed policy.}
+\label{tab:paired}
+\centering\small\begin{tabular}{lllrr}
+\toprule
+Dataset & Condition / trigger & Policy & Endpoint difference & Post-onset difference \\
+\midrule
+FEMNIST & Stop / patch & Periodic & -81.41 [-88.00, -74.91] & -28.89 [-47.79, -9.98] \\
+FEMNIST & Stop / patch & Median & -78.26 [-85.70, -72.04] & -70.50 [-73.51, -65.31] \\
+FEMNIST & Continuous / patch & Periodic & -92.58 [-93.31, -91.63] & -2.80 [-3.47, -2.22] \\
+FEMNIST & Continuous / patch & Median & -4.47 [-7.75, -1.85] & -36.00 [-39.98, -30.63] \\
+FEMNIST & Continuous / checkerboard & Periodic & -0.05 [-0.16, 0.00] & -0.03 [-0.08, -0.01] \\
+FEMNIST & Continuous / checkerboard & Median & -0.26 [-0.51, -0.06] & -6.14 [-9.11, -3.16] \\
+Fashion-MNIST & Stop / patch & Periodic & -80.04 [-86.49, -72.78] & -33.93 [-45.37, -22.50] \\
+Fashion-MNIST & Stop / patch & Median & -85.84 [-91.08, -79.32] & -68.53 [-73.53, -63.78] \\
+Fashion-MNIST & Continuous / patch & Periodic & -87.27 [-90.70, -83.85] & -3.79 [-6.22, -1.37] \\
+Fashion-MNIST & Continuous / patch & Median & -90.05 [-91.69, -88.58] & -71.47 [-74.69, -69.06] \\
+Fashion-MNIST & Continuous / checkerboard & Periodic & 0.00 [0.00, 0.00] & -0.14 [-0.68, 0.46] \\
+Fashion-MNIST & Continuous / checkerboard & Median & -24.10 [-40.25, -8.09] & -61.10 [-65.90, -55.84] \\
+\bottomrule\end{tabular}
+\end{table*}

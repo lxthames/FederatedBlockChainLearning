@@ -46,6 +46,8 @@ class VoteAggregator:
         if not votes:
             raise ValueError("votes cannot be empty")
         candidate_ids = {vote.candidate_id for vote in votes}
+        if len({vote.validator_id for vote in votes}) != len(votes):
+            raise ValueError("duplicate validator vote")
         if len(candidate_ids) != 1:
             raise ValueError("all votes must refer to one candidate")
         affirmative = tuple(sorted(vote.validator_id for vote in votes if vote.approve))

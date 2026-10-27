@@ -6,3 +6,9 @@ results/
 artifacts/
 *.log
 data/
+.venv-trust/
+blockchain/node_modules/
+blockchain/cache/
+blockchain/artifacts/
+blockchain/deployment.json
+Details/ACM_TRUST_2027/build/

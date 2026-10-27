@@ -1,0 +1,29 @@
+\section{Introduction}
+Federated learning distributes model training while retaining examples at
+participating clients~\cite{mcmahan2017}. Its aggregation interface also gives
+compromised participants a direct mechanism for modifying the global model.
+In decentralized settings, the aggregation policy must additionally determine
+who can participate, how updates are validated, and what happens after harmful
+updates have been accepted.
+
+Enrollment, robust aggregation, private evaluation, and recovery have distinct
+trust boundaries. An enrolled participant can be malicious, heterogeneous data
+can violate aggregation assumptions, and a ledger cannot establish the correctness
+of private evaluations. Restoring model parameters also leaves earlier approval
+transactions intact.
+
+We study a two-layer architecture that makes these boundaries explicit. Layer~1
+uses enrolled, staked validators to assess candidate updates on private local
+validation data. Layer~2 monitors model quality and records checkpoint restoration
+and attributed penalties. The ledger remains append-only throughout recovery.
+The term \emph{accountable} denotes recorded responsibility and enforceable stake
+accounting under the stated trust assumptions; it does not imply that a negative
+quality trend proves malicious intent.
+
+The intended contribution is an executable system specification with observable
+failure boundaries: exact committee and quorum rules, disjoint validation and
+test data, recovery that preserves blockchain history, and separate measurements
+of malicious-update acceptance, downstream attack success, and wrongful penalties.
+Component ablations and matched aggregation baselines evaluate the integrated
+mechanism. EMH-DNN routing is a secondary case study. Robustness claims require
+completed, matched-seed experiments.

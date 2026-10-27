@@ -61,8 +61,9 @@ def test_low_and_slow_ramps_without_exceeding_maximum_scale():
     first = attack.apply(update(3, [2.0]), AttackContext(round_index=1))
     last = attack.apply(update(3, [2.0]), AttackContext(round_index=20))
 
-    assert torch.allclose(first.state["weight"], torch.tensor([2.1]))
-    assert torch.allclose(last.state["weight"], torch.tensor([3.0]))
+    assert torch.allclose(first.state["weight"], torch.tensor([1.5]))
+    assert torch.allclose(last.state["weight"], torch.tensor([-3.0]))
+    assert last.state['weight'].norm() <= 1.5 * torch.tensor([2.0]).norm()
 
 
 def test_gaussian_attack_is_reproducible_from_experiment_context():

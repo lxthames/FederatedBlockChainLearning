@@ -1,0 +1,18 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[node distance=5mm,font=\scriptsize,
+box/.style={draw,rounded corners,align=center,text width=6.5cm,minimum height=7mm},
+arr/.style={-{Stealth[length=2mm]}}]
+\node[box,fill=blue!7] (train) {Enrolled clients train on private training data};
+\node[box,below=of train,fill=blue!7] (vote) {Layer 1: eligible committee evaluates candidates\\on separate private validation data; quorum approves updates};
+\node[box,below=of vote,fill=green!7] (commit) {Off-chain aggregation; on-chain model commitment\\Account-authenticated votes and stake accounting};
+\node[box,below=of commit,fill=orange!9] (monitor) {Layer 2: fixed-panel windowed quality monitoring};
+\node[box,below=of monitor,fill=orange!9] (recover) {Flag: append recovery and penalty events\\Restore historical off-chain checkpoint; retain all transactions};
+\draw[arr] (train)--(vote);\draw[arr] (vote)--(commit);
+\draw[arr] (commit)--(monitor);\draw[arr] (monitor)--(recover);
+\end{tikzpicture}
+\caption{System workflow. Raw examples remain local. The contracts enforce
+protocol transitions; they do not verify private quality measurements.}
+\Description{Five vertically connected steps: client training, private committee validation, model commitment, quality monitoring, and append-only recovery.}
+\label{fig:system}
+\end{figure}

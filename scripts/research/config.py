@@ -33,8 +33,70 @@ class ExperimentConfig:
     server_samples_per_class: int = 10
     backdoor_target_label: int = 0
     backdoor_fraction: float = 0.3
+    protocol_version: str = "trust-v2"
+    device: str = "auto"
+    model: str = "default"
+    validation_fraction: float = 0.2
+    test_fraction: float = 0.2
+    evaluation_batch_size: int = 512
+    detector: str = "trend"
+    detector_window: int = 5
+    relative_drop_threshold: float = 0.05
+    slope_threshold: float = 0.005
+    minimum_validation_delta: float = -0.05
+    initial_trust: float = 0.5
+    minimum_trust: float = 0.45
+    trust_floor: float = 0.15
+    trust_reward: float = 0.02
+    trust_penalty: float = 0.15
+    initial_stake: float = 20.0
+    minimum_stake: float = 10.0
+    slashing_penalty: float = 5.0
+    ablation: str = "full"
+    ledger_backend: str = "memory"
+    rpc_url: str = "http://127.0.0.1:8545"
+    deployment_path: str = "blockchain/deployment.json"
+    routing_budget: int = 1
+    gradual_ramp_rounds: int = 10
+    gradual_max_norm_ratio: float = 1.5
+    attack_start_round: int = 1
+    benign_drift_round: int = 0
+    benign_drift_magnitude: float = 0.0
+    max_train_samples: int | None = None
+    evidence_tier: str = "development"
+    sampling_policy: str = "uniform"
 
     def __post_init__(self) -> None:
+        if self.protocol_version != "trust-v2":
+            raise ValueError("unsupported protocol_version")
+        if self.device not in {"auto", "cpu", "cuda"}:
+            raise ValueError("device must be auto, cpu or cuda")
+        if self.model not in {"default", "emh_dnn", "mlp"}:
+            raise ValueError("unsupported model")
+        if self.detector not in {"trend", "adjacent"}:
+            raise ValueError("unsupported detector")
+        if self.ablation not in {"full", "validation_only", "no_penalties"}:
+            raise ValueError("unsupported ablation")
+        if self.ledger_backend not in {"memory", "evm"}:
+            raise ValueError("unsupported ledger_backend")
+        if not 0 < self.validation_fraction < 0.5 or not 0 < self.test_fraction < 0.5:
+            raise ValueError("split fractions must be in (0, 0.5)")
+        if not 0 <= self.trust_floor <= self.minimum_trust <= 1 or not 0 < self.initial_trust <= 1:
+            raise ValueError("invalid trust parameters")
+        if min(self.initial_stake, self.minimum_stake, self.slashing_penalty) <= 0:
+            raise ValueError("stake parameters must be positive")
+        if self.detector_window < 3 or min(self.relative_drop_threshold, self.slope_threshold) <= 0:
+            raise ValueError("invalid detector parameters")
+        if min(self.evaluation_batch_size, self.routing_budget, self.gradual_ramp_rounds, self.attack_start_round) < 1:
+            raise ValueError("batch, budget, ramp and attack start must be positive")
+        if self.gradual_max_norm_ratio <= 0 or min(self.trust_reward, self.trust_penalty, self.benign_drift_magnitude) < 0:
+            raise ValueError("invalid attack or trust parameters")
+        if self.max_train_samples is not None and self.max_train_samples < 1:
+            raise ValueError("max_train_samples must be positive")
+        if self.evidence_tier not in {"development", "confirmatory", "case_study"}:
+            raise ValueError("invalid evidence tier")
+        if self.sampling_policy not in {'uniform','bounded'}:
+            raise ValueError('invalid sampling policy')
         if not self.experiment_id.strip():
             raise ValueError("experiment_id cannot be empty")
         if re.fullmatch(r"[A-Za-z0-9._-]+", self.experiment_id) is None:

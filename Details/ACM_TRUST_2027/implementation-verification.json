@@ -1,0 +1,12 @@
+{
+  "tests_passed": 71,
+  "deployed_contract_tests": "passed",
+  "live_training_to_contract_rounds": 5,
+  "trace_replays_completed_clients": [
+    20,
+    50,
+    80
+  ],
+  "original_manuscript_unchanged": true,
+  "publication_ready": false
+}

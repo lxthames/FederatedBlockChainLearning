@@ -1,0 +1,7 @@
+# Install a matching CUDA-enabled torch/torchvision pair first (see runbook).
+numpy>=2.0,<3
+PyYAML>=6,<7
+pytest>=9,<10
+web3==8.0.0
+matplotlib>=3.9,<4
+PyMuPDF>=1.24

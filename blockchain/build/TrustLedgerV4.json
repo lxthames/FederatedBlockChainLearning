@@ -1,0 +1,716 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "id",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minimum",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "round",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "proposer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "updateHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "CandidateOpened",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Deposited",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Enrolled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "version",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "parentVersion",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "ModelCommitted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "first",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "last",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "restored",
+          "type": "uint256"
+        }
+      ],
+      "name": "RecoveryApplied",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "recovery",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "validator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Slashed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "validator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "approve",
+          "type": "bool"
+        }
+      ],
+      "name": "Vote",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        }
+      ],
+      "name": "accepted",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "activeVersion",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        }
+      ],
+      "name": "applyRecovery",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        }
+      ],
+      "name": "attestRecovery",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "burned",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "round",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "base",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "proposer",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "candidateKey",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "version",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "approved",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "commitModel",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "enroll",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "enrolled",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "experiment",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "genesis",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "invalidated",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "latestVersion",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minimumStake",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "modelHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "round",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "proposer",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address[]",
+          "name": "members",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "eligible",
+          "type": "address[]"
+        }
+      ],
+      "name": "openCandidate",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "first",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "last",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "restored",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "reason",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address[]",
+          "name": "panel",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bool",
+          "name": "penaltiesEnabled",
+          "type": "bool"
+        }
+      ],
+      "name": "openRecovery",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "parent",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "penalty",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "recoveries",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "first",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "last",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "restored",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "quorum",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "approvals",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "exists",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "applied",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "penaltiesEnabled",
+          "type": "bool"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "reason",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "recoveryCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "registrar",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "stake",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bool",
+          "name": "approve",
+          "type": "bool"
+        }
+      ],
+      "name": "vote",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "evm": {
+    "bytecode": {
+      "object": "610100604052348015610010575f5ffd5b5060405161203138038061203183398101604081905261002f9161008f565b5f8211801561003d57505f81115b61007a5760405162461bcd60e51b815260206004820152600a602482015269706172616d657465727360b01b604482015260640160405180910390fd5b3360805260a09290925260c05260e0526100ba565b5f5f5f606084860312156100a1575f5ffd5b5050815160208301516040909301519094929350919050565b60805160a05160c05160e051611ee96101485f395f818161019e01528181610de00152610e0601525f818161055c015281816107b30152818161146201528181611629015261198001525f81816103e5015261121501525f81816102990152818161059e0152818161088301528181610b1b01528181610c130152818161128801526113850152611ee95ff3fe608060405260043610610161575f3560e01c806373f42561116100cd578063ba83d1a011610087578063d0e30db011610062578063d0e30db014610515578063d4456eeb1461051d578063ec5ffac21461054b578063fccdcc3e1461057e575f5ffd5b8063ba83d1a0146104c3578063bf50e470146104e2578063c07f47d414610501575f5ffd5b806373f42561146104075780638642afd11461041c57806387731cc91461043b5780639f2ce6781461045a5780639fecc31214610479578063b9835f3214610498575f5ffd5b80632a106d541161011e5780632a106d54146102695780632b20e397146102885780634eaa9d22146102d357806352dd9cfc146102fe5780636c5e47c71461031d5780636d2b0348146103d4575f5ffd5b8063010a623c146101655780630edd2ffc1461018d57806310eb0e0e146101c0578063124ae244146101fe5780631864d1cc1461021f578063264762041461023e575b5f5ffd5b348015610170575f5ffd5b5061017a60025481565b6040519081526020015b60405180910390f35b348015610198575f5ffd5b5061017a7f000000000000000000000000000000000000000000000000000000000000000081565b3480156101cb575f5ffd5b506101ee6101da366004611b84565b60046020525f908152604090205460ff1681565b6040519015158152602001610184565b348015610209575f5ffd5b5061021d610218366004611bf4565b610593565b005b34801561022a575f5ffd5b5061021d610239366004611c72565b610878565b348015610249575f5ffd5b5061017a610258366004611b84565b60056020525f908152604090205481565b348015610274575f5ffd5b5061021d610283366004611cc1565b610b10565b348015610293575f5ffd5b506102bb7f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b039091168152602001610184565b3480156102de575f5ffd5b5061017a6102ed366004611cc1565b60076020525f908152604090205481565b348015610309575f5ffd5b5061021d610318366004611cc1565b610c08565b348015610328575f5ffd5b5061038a610337366004611cc1565b600e6020525f908152604090208054600182015460028301546003840154600485015460058601546006909601549495939492939192909160ff8082169261010083048216926201000090049091169089565b60408051998a5260208a01989098529688019590955260608701939093526080860191909152151560a0850152151560c0840152151560e083015261010082015261012001610184565b3480156103df575f5ffd5b5061017a7f000000000000000000000000000000000000000000000000000000000000000081565b348015610412575f5ffd5b5061017a60035481565b348015610427575f5ffd5b506101ee610436366004611cc1565b610f44565b348015610446575f5ffd5b5061021d610455366004611cc1565b610f74565b348015610465575f5ffd5b5061021d610474366004611cd8565b61106f565b348015610484575f5ffd5b5061017a610493366004611d02565b611200565b3480156104a3575f5ffd5b5061017a6104b2366004611cc1565b60066020525f908152604090205481565b3480156104ce575f5ffd5b5061021d6104dd366004611b84565b61127d565b3480156104ed575f5ffd5b5061017a6104fc366004611d3c565b611379565b34801561050c575f5ffd5b5061017a5f5481565b61021d611abc565b348015610528575f5ffd5b506101ee610537366004611cc1565b60086020525f908152604090205460ff1681565b348015610556575f5ffd5b5061017a7f000000000000000000000000000000000000000000000000000000000000000081565b348015610589575f5ffd5b5061017a60015481565b336001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016146105e45760405162461bcd60e51b81526004016105db90611dce565b60405180910390fd5b5f888152600e602052604090206005015460ff1615801561060457505f87115b80156106105750858711155b801561061c57505f5486145b8015610629575085600154145b6106605760405162461bcd60e51b81526020600482015260086024820152671a5b9d195c9d985b60c21b60448201526064016105db565b868510801561067b57505f8581526006602052604090205415155b801561069557505f8581526008602052604090205460ff16155b80156106a2575060038210155b6106d85760405162461bcd60e51b8152602060048201526007602482015266726573746f726560c81b60448201526064016105db565b5f888152600e60205260409020878155600181018790556002808201879055600390610705908590611e05565b610710906002611e22565b61071a9190611e35565b600382015560058101805460068301879055831515620100000262ff00ff199091161760011790555f5b8381101561086c575f85858381811061075f5761075f611e54565b90506020020160208101906107749190611b84565b6001600160a01b0381165f9081526004602052604090205490915060ff1680156107d557506001600160a01b0381165f908152600560205260409020547f000000000000000000000000000000000000000000000000000000000000000011155b801561080357505f8b8152600f602090815260408083206001600160a01b038516845290915290205460ff16155b6108375760405162461bcd60e51b81526020600482015260056024820152641c185b995b60da1b60448201526064016105db565b5f8b8152600f602090815260408083206001600160a01b03909416835292905220805460ff1916600190811790915501610744565b50505050505050505050565b336001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016146108c05760405162461bcd60e51b81526004016105db90611dce565b5f805260066020525f516020611e945f395f51905f5254158015906108f057505f546108ed906001611e22565b84145b80156108fb57508215155b6109315760405162461bcd60e51b81526020600482015260076024820152663b32b939b4b7b760c91b60448201526064016105db565b5f5b81811015610aa6575f600b5f85858581811061095157610951611e54565b602090810292909201358352508101919091526040015f20600681015490915060ff1680156109805750805486145b801561099157506001548160010154145b80156109a557508060040154816005015410155b6109da5760405162461bcd60e51b815260206004820152600660248201526571756f72756d60d01b60448201526064016105db565b5f5b6008820154811015610a9c575f8260080182815481106109fe576109fe611e54565b5f9182526020808320909101548a8352600a825260408084206001600160a01b039092168085529190925291205490915060ff16610a93575f888152600a602090815260408083206001600160a01b038516808552908352818420805460ff191660019081179091558c8552600984529184208054928301815584529190922090910180546001600160a01b03191690911790555b506001016109dc565b5050600101610933565b50600180545f8681526007602090815260408083209390935560068152908290208690559154815190815291820185905285917f1790ad6cbe800a5c0017d5fb46e261816bb3fb6596e2e840588fc33fd0c799af910160405180910390a25050505f819055600155565b336001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001614610b585760405162461bcd60e51b81526004016105db90611dce565b5f805260066020525f516020611e945f395f51905f5254158015610b7b57508015155b610bb15760405162461bcd60e51b815260206004820152600760248201526667656e6573697360c81b60448201526064016105db565b5f808052600660209081525f516020611e945f395f51905f52839055604080518381529182018490527f1790ad6cbe800a5c0017d5fb46e261816bb3fb6596e2e840588fc33fd0c799af910160405180910390a250565b336001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001614610c505760405162461bcd60e51b81526004016105db90611dce565b5f818152600e60205260409020600581015460ff168015610c7b57506005810154610100900460ff16155b8015610c8f57508060030154816004015410155b8015610ca057508060010154600154145b610cde5760405162461bcd60e51b815260206004820152600f60248201526e7265636f766572792071756f72756d60881b60448201526064016105db565b60058101805461ff00191661010017905560028054905f610cfe83611e68565b909155505080545b81600101548111610eeb575f818152600860205260409020805460ff19166001179055600582015462010000900460ff1615610ed9575f5b5f82815260096020526040902054811015610ed7575f828152600960205260408120805483908110610d7257610d72611e54565b5f9182526020808320909101548783526011825260408084206001600160a01b039092168085529190925291205490915060ff16610ece575f8581526011602090815260408083206001600160a01b03851684528252808320805460ff1916600117905560059091528120547f000000000000000000000000000000000000000000000000000000000000000011610e2a577f0000000000000000000000000000000000000000000000000000000000000000610e43565b6001600160a01b0382165f908152600560205260409020545b6001600160a01b0383165f90815260056020526040812080549293508392909190610e6f908490611e80565b925050819055508060035f828254610e879190611e22565b90915550506040518181526001600160a01b0383169087907f9de580357d3604ebca6b3a7ea5fec250912003c037421eb01869fcf2b15d13079060200160405180910390a3505b50600101610d3e565b505b80610ee381611e68565b915050610d06565b506002810154600181815582549083015460408051928352602083019190915281019190915282907f4a104f7cfa46ab1f11c8094a91724e2782d066b765b087dfb2f4bcd4ca4e6c969060600160405180910390a25050565b5f818152600b60205260408120600681015460ff168015610f6d57508060040154816005015410155b9392505050565b5f818152600e60205260409020600581015460ff168015610f9f57506005810154610100900460ff16155b8015610fb057508060010154600154145b8015610fd457505f828152600f6020908152604080832033845290915290205460ff165b8015610ff957505f82815260106020908152604080832033845290915290205460ff16155b6110335760405162461bcd60e51b815260206004820152600b60248201526a30ba3a32b9ba30ba34b7b760a91b60448201526064016105db565b5f8281526010602090815260408083203384529091528120805460ff191660011790556004820180549161106683611e68565b91905055505050565b5f828152600b60205260409020600681015460ff16801561109c57505f54611098906001611e22565b8154145b80156110ad57506001548160010154145b6110e65760405162461bcd60e51b815260206004820152600a6024820152697374616c6520766f746560b01b60448201526064016105db565b5f838152600c6020908152604080832033845290915290205460ff16801561112757505f838152600d6020908152604080832033845290915290205460ff16155b61115c5760405162461bcd60e51b81526004016105db90602080825260049082015263766f746560e01b604082015260600190565b5f838152600d602090815260408083203384529091529020805460ff1916600117905581156111c257600581018054905f61119683611e68565b90915550506008810180546001810182555f91825260209091200180546001600160a01b031916331790555b6040518215158152339084907f944c79506d32f6865105a074d54edc0b6ed7d59ccad3903893134878345c23529060200160405180910390a3505050565b604080514660208083019190915230828401527f00000000000000000000000000000000000000000000000000000000000000006060830152608082019690965260a08101949094526001600160a01b039290921660c084015260e080840191909152815180840390910181526101009092019052805191012090565b336001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016146112c55760405162461bcd60e51b81526004016105db90611dce565b6001600160a01b0381165f9081526004602052604090205460ff161580156112f557506001600160a01b03811615155b61132e5760405162461bcd60e51b815260206004820152600a602482015269195b9c9bdb1b1b595b9d60b21b60448201526064016105db565b6001600160a01b0381165f81815260046020526040808220805460ff19166001179055517f6132d0e5700fe03060d64172a9ce706f525f7dfacb454a300ba78f4b50fc87229190a250565b5f336001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016146113c25760405162461bcd60e51b81526004016105db90611dce565b5f805260066020525f516020611e945f395f51905f5254158015906113f257505f546113ef906001611e22565b88145b6114265760405162461bcd60e51b81526020600482015260056024820152641c9bdd5b9960da1b60448201526064016105db565b6001600160a01b0387165f9081526004602052604090205460ff16801561148457506001600160a01b0387165f908152600560205260409020547f000000000000000000000000000000000000000000000000000000000000000011155b801561148f57508515155b6114c75760405162461bcd60e51b815260206004820152600960248201526863616e64696461746560b81b60448201526064016105db565b81600381101561150f5760405162461bcd60e51b815260206004820152601360248201527232b634b3b4b13632903837b83ab630ba34b7b760691b60448201526064016105db565b5f600a61151d836003611e05565b611528906009611e22565b6115329190611e35565b90506003811015611541575060035b8181111561154c5750805b85811461158c5760405162461bcd60e51b815260206004820152600e60248201526d636f6d6d69747465652073697a6560901b60448201526064016105db565b5f5b8281101561178957896001600160a01b03168686838181106115b2576115b2611e54565b90506020020160208101906115c79190611b84565b6001600160a01b031614158015611620575060045f8787848181106115ee576115ee611e54565b90506020020160208101906116039190611b84565b6001600160a01b0316815260208101919091526040015f205460ff165b801561169557507f000000000000000000000000000000000000000000000000000000000000000060055f88888581811061165d5761165d611e54565b90506020020160208101906116729190611b84565b6001600160a01b03166001600160a01b031681526020019081526020015f205410155b6116cc5760405162461bcd60e51b8152602060048201526008602482015267656c696769626c6560c01b60448201526064016105db565b5f5b81811015611780578686828181106116e8576116e8611e54565b90506020020160208101906116fd9190611b84565b6001600160a01b031687878481811061171857611718611e54565b905060200201602081019061172d9190611b84565b6001600160a01b0316036117785760405162461bcd60e51b81526020600482015260126024820152716475706c696361746520656c696769626c6560701b60448201526064016105db565b6001016116ce565b5060010161158e565b506117988a6001548b8b611200565b5f818152600b6020526040902060068101549194509060ff16156117f45760405162461bcd60e51b81526020600482015260136024820152726475706c69636174652063616e64696461746560681b60448201526064016105db565b8a81556001805490820155600280820180546001600160a01b0319166001600160a01b038d1617905560038083018b905590611831908990611e05565b61183c906002611e22565b6118469190611e35565b600482015560068101805460ff191660011790555f5b87811015611a62575f89898381811061187757611877611e54565b905060200201602081019061188c9190611b84565b90505f805b868110156118e557826001600160a01b03168a8a838181106118b5576118b5611e54565b90506020020160208101906118ca9190611b84565b6001600160a01b0316036118dd57600191505b600101611891565b50806119265760405162461bcd60e51b815260206004820152601060248201526f1bdd5d1cda5919481cdb985c1cda1bdd60821b60448201526064016105db565b8c6001600160a01b0316826001600160a01b03161415801561195f57506001600160a01b0382165f9081526004602052604090205460ff165b80156119a257506001600160a01b0382165f908152600560205260409020547f000000000000000000000000000000000000000000000000000000000000000011155b80156119d057505f878152600c602090815260408083206001600160a01b038616845290915290205460ff16155b611a055760405162461bcd60e51b815260206004820152600660248201526536b2b6b132b960d11b60448201526064016105db565b505f868152600c602090815260408083206001600160a01b039094168084529382528220805460ff191660019081179091556007860180548083018255908452919092200180546001600160a01b0319169092179091550161185c565b50604080518c81526001600160a01b038c1660208201529081018a905284907f9b7dbf5a6c76e21e456cab48c0056038d7ae2458758200686f4c660086196a579060600160405180910390a2505050979650505050505050565b335f9081526004602052604090205460ff168015611ad957505f34115b611b0f5760405162461bcd60e51b815260206004820152600760248201526619195c1bdcda5d60ca1b60448201526064016105db565b335f9081526005602052604081208054349290611b2d908490611e22565b909155505060405134815233907f2da466a7b24304f47e87fa2e1e5a81b9831ce54fec19055ce277ca2f39ba42c49060200160405180910390a2565b80356001600160a01b0381168114611b7f575f5ffd5b919050565b5f60208284031215611b94575f5ffd5b610f6d82611b69565b5f5f83601f840112611bad575f5ffd5b50813567ffffffffffffffff811115611bc4575f5ffd5b6020830191508360208260051b8501011115611bde575f5ffd5b9250929050565b80358015158114611b7f575f5ffd5b5f5f5f5f5f5f5f5f60e0898b031215611c0b575f5ffd5b883597506020890135965060408901359550606089013594506080890135935060a089013567ffffffffffffffff811115611c44575f5ffd5b611c508b828c01611b9d565b9094509250611c63905060c08a01611be5565b90509295985092959890939650565b5f5f5f5f60608587031215611c85575f5ffd5b8435935060208501359250604085013567ffffffffffffffff811115611ca9575f5ffd5b611cb587828801611b9d565b95989497509550505050565b5f60208284031215611cd1575f5ffd5b5035919050565b5f5f60408385031215611ce9575f5ffd5b82359150611cf960208401611be5565b90509250929050565b5f5f5f5f60808587031215611d15575f5ffd5b8435935060208501359250611d2c60408601611b69565b9396929550929360600135925050565b5f5f5f5f5f5f5f60a0888a031215611d52575f5ffd5b87359650611d6260208901611b69565b955060408801359450606088013567ffffffffffffffff811115611d84575f5ffd5b611d908a828b01611b9d565b909550935050608088013567ffffffffffffffff811115611daf575f5ffd5b611dbb8a828b01611b9d565b989b979a50959850939692959293505050565b6020808252600990820152683932b3b4b9ba3930b960b91b604082015260600190565b634e487b7160e01b5f52601160045260245ffd5b8082028115828204841417611e1c57611e1c611df1565b92915050565b80820180821115611e1c57611e1c611df1565b5f82611e4f57634e487b7160e01b5f52601260045260245ffd5b500490565b634e487b7160e01b5f52603260045260245ffd5b5f60018201611e7957611e79611df1565b5060010190565b81810381811115611e1c57611e1c611df156fe54cdd369e4e8a8515e52ca72ec816c2101831ad1f18bf44102ed171459c9b4f8a2646970667358221220399890caf1a68a45bc0a2a966d3a036206311ae5cfd53717e62eed54bc78196164736f6c634300081e0033"
+    }
+  },
+  "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+  "input": {
+    "language": "Solidity",
+    "sources": {
+      "TrustLedgerV4.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.30;\r\n\r\n/// @notice Experimental model-state ledger. Reports attest to measured quality;\r\n/// they do not prove the cause of a degradation. The registrar is trusted.\r\ncontract TrustLedgerV4 {\r\n    address public immutable registrar;\r\n    bytes32 public immutable experiment;\r\n    uint256 public immutable minimumStake;\r\n    uint256 public immutable penalty;\r\n    uint256 public latestVersion;\r\n    uint256 public activeVersion;\r\n    uint256 public recoveryCount;\r\n    uint256 public burned;\r\n    mapping(address => bool) public enrolled;\r\n    mapping(address => uint256) public stake;\r\n    mapping(uint256 => bytes32) public modelHash;\r\n    mapping(uint256 => uint256) public parent;\r\n    mapping(uint256 => bool) public invalidated;\r\n    mapping(uint256 => address[]) private modelSigners;\r\n    mapping(uint256 => mapping(address => bool)) private signedModel;\r\n    struct Candidate {\r\n        uint256 round;\r\n        uint256 baseVersion;\r\n        address proposer;\r\n        bytes32 updateHash;\r\n        uint256 quorum;\r\n        uint256 approvals;\r\n        bool exists;\r\n        address[] members;\r\n        address[] affirmative;\r\n    }\r\n    mapping(bytes32 => Candidate) private candidates;\r\n    mapping(bytes32 => mapping(address => bool)) private member;\r\n    mapping(bytes32 => mapping(address => bool)) private voted;\r\n    struct Recovery {\r\n        uint256 first;\r\n        uint256 last;\r\n        uint256 restored;\r\n        uint256 quorum;\r\n        uint256 approvals;\r\n        bool exists;\r\n        bool applied;\r\n        bool penaltiesEnabled;\r\n        bytes32 reason;\r\n    }\r\n    mapping(bytes32 => Recovery) public recoveries;\r\n    mapping(bytes32 => mapping(address => bool)) private recoveryMember;\r\n    mapping(bytes32 => mapping(address => bool)) private recoveryVoted;\r\n    mapping(bytes32 => mapping(address => bool)) private penalized;\r\n    event Enrolled(address indexed account);\r\n    event Deposited(address indexed account, uint256 amount);\r\n    event CandidateOpened(bytes32 indexed key, uint256 round, address proposer, bytes32 updateHash);\r\n    event Vote(bytes32 indexed key, address indexed validator, bool approve);\r\n    event ModelCommitted(uint256 indexed version, uint256 parentVersion, bytes32 hash);\r\n    event RecoveryApplied(bytes32 indexed key, uint256 first, uint256 last, uint256 restored);\r\n    event Slashed(bytes32 indexed recovery, address indexed validator, uint256 amount);\r\n    modifier onlyRegistrar() { require(msg.sender == registrar, 'registrar'); _; }\r\n    constructor(bytes32 id, uint256 minimum, uint256 amount) {\r\n        require(minimum > 0 && amount > 0, 'parameters');\r\n        registrar = msg.sender; experiment = id; minimumStake = minimum; penalty = amount;\r\n    }\r\n    function enroll(address account) external onlyRegistrar {\r\n        require(!enrolled[account] && account != address(0), 'enrollment');\r\n        enrolled[account] = true; emit Enrolled(account);\r\n    }\r\n    function deposit() external payable {\r\n        require(enrolled[msg.sender] && msg.value > 0, 'deposit');\r\n        stake[msg.sender] += msg.value; emit Deposited(msg.sender, msg.value);\r\n    }\r\n    function genesis(bytes32 hash) external onlyRegistrar {\r\n        require(modelHash[0] == bytes32(0) && hash != bytes32(0), 'genesis');\r\n        modelHash[0] = hash; emit ModelCommitted(0,0,hash);\r\n    }\r\n    function candidateKey(uint256 round, uint256 base, address proposer, bytes32 hash) public view returns(bytes32) {\r\n        return keccak256(abi.encode(block.chainid,address(this),experiment,round,base,proposer,hash));\r\n    }\r\n    function openCandidate(uint256 round, address proposer, bytes32 hash, address[] calldata members, address[] calldata eligible) external onlyRegistrar returns(bytes32 key) {\r\n        require(modelHash[0] != bytes32(0) && round == latestVersion+1, 'round');\r\n        require(enrolled[proposer] && stake[proposer]>=minimumStake && hash != bytes32(0), 'candidate');\r\n        // Registrar attests off-chain trust eligibility. Contract checks the\r\n        // declared full snapshot for stake, uniqueness, exclusion and size.\r\n        uint256 count=eligible.length;\r\n        require(count>=3,'eligible population');\r\n        uint256 size=(3*count+9)/10;\r\n        if(size<3) size=3;\r\n        if(size>count) size=count;\r\n        require(members.length==size,'committee size');\r\n        for(uint256 i=0;i<count;i++) {\r\n            require(eligible[i]!=proposer && enrolled[eligible[i]] && stake[eligible[i]]>=minimumStake,'eligible');\r\n            for(uint256 j=0;j<i;j++) require(eligible[i]!=eligible[j],'duplicate eligible');\r\n        }\r\n        key = candidateKey(round,activeVersion,proposer,hash);\r\n        Candidate storage c = candidates[key]; require(!c.exists,'duplicate candidate');\r\n        c.round=round; c.baseVersion=activeVersion; c.proposer=proposer; c.updateHash=hash;\r\n        c.quorum=(2*members.length+2)/3; c.exists=true;\r\n        for(uint256 i=0;i<members.length;i++) {\r\n            address a=members[i];\r\n            bool included=false;\r\n            for(uint256 j=0;j<count;j++) if(eligible[j]==a) included=true;\r\n            require(included,'outside snapshot');\r\n            require(a!=proposer && enrolled[a] && stake[a]>=minimumStake && !member[key][a], 'member');\r\n            member[key][a]=true; c.members.push(a);\r\n        }\r\n        emit CandidateOpened(key,round,proposer,hash);\r\n    }\r\n    function vote(bytes32 key, bool approve) external {\r\n        Candidate storage c=candidates[key];\r\n        require(c.exists && c.round==latestVersion+1 && c.baseVersion==activeVersion,'stale vote');\r\n        require(member[key][msg.sender] && !voted[key][msg.sender],'vote');\r\n        voted[key][msg.sender]=true;\r\n        if(approve) { c.approvals++; c.affirmative.push(msg.sender); }\r\n        emit Vote(key,msg.sender,approve);\r\n    }\r\n    function accepted(bytes32 key) external view returns(bool) {\r\n        Candidate storage c=candidates[key]; return c.exists && c.approvals>=c.quorum;\r\n    }\r\n    function commitModel(uint256 version, bytes32 hash, bytes32[] calldata approved) external onlyRegistrar {\r\n        require(modelHash[0]!=bytes32(0) && version==latestVersion+1 && hash!=bytes32(0),'version');\r\n        for(uint256 i=0;i<approved.length;i++) {\r\n            Candidate storage c=candidates[approved[i]];\r\n            require(c.exists && c.round==version && c.baseVersion==activeVersion && c.approvals>=c.quorum,'quorum');\r\n            for(uint256 j=0;j<c.affirmative.length;j++) {\r\n                address a=c.affirmative[j];\r\n                if(!signedModel[version][a]) { signedModel[version][a]=true; modelSigners[version].push(a); }\r\n            }\r\n        }\r\n        // The trusted orchestrator computes aggregation; an empty approved set\r\n        // records a no-op model version, not an implicitly approved update.\r\n        parent[version]=activeVersion; modelHash[version]=hash;\r\n        emit ModelCommitted(version,activeVersion,hash);\r\n        latestVersion=version; activeVersion=version;\r\n    }\r\n    function openRecovery(bytes32 key, uint256 first, uint256 last, uint256 restored,\r\n        bytes32 reason, address[] calldata panel, bool penaltiesEnabled) external onlyRegistrar {\r\n        require(!recoveries[key].exists && first>0 && first<=last && last==latestVersion && activeVersion==last,'interval');\r\n        require(restored<first && modelHash[restored]!=bytes32(0) && !invalidated[restored] && panel.length>=3,'restore');\r\n        Recovery storage r=recoveries[key];\r\n        r.first=first; r.last=last; r.restored=restored; r.quorum=(2*panel.length+2)/3;\r\n        r.exists=true; r.reason=reason; r.penaltiesEnabled=penaltiesEnabled;\r\n        for(uint256 i=0;i<panel.length;i++) {\r\n            address a=panel[i];\r\n            require(enrolled[a] && stake[a]>=minimumStake && !recoveryMember[key][a],'panel');\r\n            recoveryMember[key][a]=true;\r\n        }\r\n    }\r\n    function attestRecovery(bytes32 key) external {\r\n        Recovery storage r=recoveries[key];\r\n        require(r.exists && !r.applied && activeVersion==r.last && recoveryMember[key][msg.sender] && !recoveryVoted[key][msg.sender],'attestation');\r\n        recoveryVoted[key][msg.sender]=true; r.approvals++;\r\n    }\r\n    function applyRecovery(bytes32 key) external onlyRegistrar {\r\n        Recovery storage r=recoveries[key];\r\n        require(r.exists && !r.applied && r.approvals>=r.quorum && activeVersion==r.last,'recovery quorum');\r\n        r.applied=true; recoveryCount++;\r\n        for(uint256 v=r.first;v<=r.last;v++) {\r\n            invalidated[v]=true;\r\n            if(r.penaltiesEnabled) for(uint256 j=0;j<modelSigners[v].length;j++) {\r\n                address a=modelSigners[v][j];\r\n                if(!penalized[key][a]) {\r\n                    penalized[key][a]=true;\r\n                    uint256 amount=stake[a]<penalty ? stake[a] : penalty;\r\n                    stake[a]-=amount; burned+=amount; emit Slashed(key,a,amount);\r\n                }\r\n            }\r\n        }\r\n        activeVersion=r.restored;\r\n        emit RecoveryApplied(key,r.first,r.last,r.restored);\r\n    }\r\n}\r\n"
+      }
+    },
+    "settings": {
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "evmVersion": "cancun",
+      "outputSelection": {
+        "*": {
+          "*": [
+            "abi",
+            "evm.bytecode.object"
+          ]
+        }
+      }
+    }
+  }
+}

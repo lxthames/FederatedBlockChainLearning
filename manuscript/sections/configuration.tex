@@ -1,0 +1,27 @@
+
+\begin{table*}[t]
+\caption{Experimental configuration. Common settings apply to both completed comparisons.}
+\label{tab:configuration}
+\centering\begin{tabular}{lll}
+\toprule
+Setting & FEMNIST & Fashion-MNIST \\
+\midrule
+Classes and client partition & 62; natural writer clients & 10; Dirichlet $\alpha=0.5$ \\
+Clients; participants per round & \multicolumn{2}{l}{50; 20 (six malicious and fourteen honest in attacked conditions)}\\
+Training rounds; local epochs & \multicolumn{2}{l}{100; one local epoch per participating client}\\
+Local batch size; learning rate & 16; 0.05 & 64; 0.01 \\
+Local optimizer & \multicolumn{2}{l}{SGD with momentum 0.9}\\
+CNN & \multicolumn{2}{l}{Two $3\times3$ convolutional layers (32, 64 channels), ReLU and $2\times2$ pooling}\\
+Classifier & \multicolumn{2}{l}{Flattened $64\times7\times7$ features; 128-unit ReLU layer; class logits}\\
+Client validation allocation & \multicolumn{2}{l}{20\% of client training-pool examples; separate held-out test data}\\
+Poisoning & \multicolumn{2}{l}{30\% of malicious-client examples relabeled to class 0; update scaling $20/6$}\\
+Bottom-right trigger & Black $2\times2$ patch & White $2\times2$ patch \\
+Transfer trigger & \multicolumn{2}{l}{Centered $6\times6$ checkerboard}\\
+Attack rounds & \multicolumn{2}{l}{11--50 (attacker-stop) or 11--100 (continuous)}\\
+Repair rounds & \multicolumn{2}{l}{25, 50, 75, 100}\\
+Repair allocation & \multicolumn{2}{l}{Five providers; two disjoint five-client admission panels; up to 32 examples/client}\\
+Repair optimization & \multicolumn{2}{l}{200 student steps; batch size 16; SGD learning rate 0.01}\\
+NAD teacher optimization & \multicolumn{2}{l}{200 additional steps on the same repair allocation}\\
+Seeds & \multicolumn{2}{l}{4103, 4211, 4327, 4441, 4549}\\
+\bottomrule\end{tabular}
+\end{table*}

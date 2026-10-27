@@ -1,0 +1,18 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[node distance=5mm,font=\scriptsize,
+box/.style={draw,rounded corners,align=center,minimum height=8mm},
+arr/.style={-{Stealth[length=2mm]}}]
+\node[box,text width=3cm] (input) {128-dimensional routing input};
+\node[box,below left=7mm and -6mm of input,text width=2.6cm,fill=blue!7] (a) {$128\rightarrow128$; BN; ReLU\\Dropout 0.30};
+\node[box,below right=7mm and -6mm of input,text width=2.6cm,fill=green!7] (b) {$128\rightarrow128$; BN; ReLU\\Dropout 0.15};
+\node[box,below=21mm of input,text width=3cm] (fusion) {Mean fusion: $z=(f_1+f_2)/2$};
+\node[box,below=of fusion,text width=5cm] (heads) {$N$ scalar heads: $128\rightarrow1$ each\\Softmax; top-1 shard selection};
+\draw[arr] (input)--(a);\draw[arr] (input)--(b);
+\draw[arr] (a)--(fusion);\draw[arr] (b)--(fusion);\draw[arr] (fusion)--(heads);
+\end{tikzpicture}
+\caption{EMH-DNN supporting routing model. Both branches receive the complete
+input; client heads add $129N$ parameters.}
+\Description{A 128-dimensional input feeds two parallel neural branches with different dropout rates, then mean fusion and one scalar head per shard.}
+\label{fig:emh}
+\end{figure}

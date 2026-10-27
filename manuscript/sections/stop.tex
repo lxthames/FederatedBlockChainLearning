@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\caption{All eight policies under patch-trigger attacker-stop poisoning, with clean-training references. Accuracy and ASR are percentages; admissions are means out of four scheduled attempts (zero for non-repair policies). Each mean uses five seeds.}
+\label{tab:stop}
+\centering\small\begin{tabular}{llrrrrrrr}
+\toprule
+Dataset & Policy & Clean acc. & Attack acc. & End ASR & Stop ASR & Onset ASR & Clean adm. & Attack adm. \\
+\midrule
+FEMNIST & Quorum & 76.57 & 77.53 & 86.15 & 94.64 & 94.50 & 0.0 & 0.0 \\
+FEMNIST & Clipping & 76.62 & 77.15 & 86.11 & 94.39 & 96.15 & 0.0 & 0.0 \\
+FEMNIST & Periodic & 76.67 & 77.53 & 4.74 & 44.81 & 65.61 & 3.2 & 3.0 \\
+FEMNIST & Forced periodic & 77.04 & 77.69 & 3.70 & 11.21 & 46.58 & 4.0 & 4.0 \\
+FEMNIST & Fine-tune & 77.04 & 77.53 & 86.15 & 94.64 & 94.50 & 0.2 & 0.0 \\
+FEMNIST & Forced fine-tune & 74.28 & 75.08 & 85.28 & 94.05 & 94.12 & 4.0 & 4.0 \\
+FEMNIST & Fine-Pruning & 77.08 & 77.02 & 84.71 & 93.64 & 93.88 & 0.2 & 0.6 \\
+FEMNIST & Forced Fine-Pruning & 73.10 & 74.13 & 76.78 & 90.08 & 91.79 & 4.0 & 4.0 \\
+Fashion-MNIST & Quorum & 82.43 & 82.76 & 88.60 & 90.84 & 72.47 & 0.0 & 0.0 \\
+Fashion-MNIST & Clipping & 83.41 & 84.62 & 91.95 & 94.36 & 81.72 & 0.0 & 0.0 \\
+Fashion-MNIST & Periodic & 82.33 & 83.40 & 8.56 & 30.39 & 38.54 & 3.2 & 3.6 \\
+Fashion-MNIST & Forced periodic & 82.35 & 83.02 & 7.76 & 14.73 & 29.47 & 4.0 & 4.0 \\
+Fashion-MNIST & Fine-tune & 82.77 & 83.05 & 84.85 & 90.48 & 72.61 & 0.4 & 1.6 \\
+Fashion-MNIST & Forced fine-tune & 82.03 & 82.95 & 82.96 & 88.57 & 71.00 & 4.0 & 4.0 \\
+Fashion-MNIST & Fine-Pruning & 82.57 & 82.56 & 71.48 & 80.23 & 65.68 & 0.4 & 1.4 \\
+Fashion-MNIST & Forced Fine-Pruning & 81.17 & 81.68 & 41.61 & 54.68 & 50.98 & 4.0 & 4.0 \\
+\bottomrule\end{tabular}
+\end{table*}

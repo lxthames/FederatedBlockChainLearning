@@ -1,0 +1,76 @@
+{
+  "checked_utc": "2026-10-18T17:51:00.505224+00:00",
+  "full_test_suite_passed": 86,
+  "evm_enabled": true,
+  "original_research_changes": [],
+  "original_manuscript_sha256": "42c189b8d76ad1e92ffa35795083857be4486ca3f8f5e9dce13dab48df2984ab",
+  "extension_frozen_source_changes": [],
+  "femnist_provenance_sha256": "ddf521b85db8a6d5eca4da61e71eb0aee9416fa9d7ff3c4d603b08f3e026135e",
+  "extension_status": {
+    "completed": 2,
+    "current_experiment": "development-fashion_mnist-fedavg-low_and_slow-s3-0d84606599",
+    "development_total": 33,
+    "device": "cpu",
+    "evaluation_total": 275,
+    "failed": 0,
+    "held": 0,
+    "last_run_seconds": 118.08774839999387,
+    "phase": "development",
+    "pid": 45060,
+    "publication_ready": false,
+    "started_utc": "2026-10-18T17:48:14.308329+00:00",
+    "status": "running",
+    "systems_failed": 0,
+    "updated_utc": "2026-10-18T17:52:11.715568+00:00"
+  },
+  "publication_ready": false,
+  "limits": [
+    "Evidence incomplete",
+    "Changed recovery attestation policy requires version-specific evidence",
+    "Concurrent runtime forecast is exploratory",
+    "Final author review and final-version coverage reconciliation required"
+  ],
+  "pdf_build": {
+    "pages": [
+      {
+        "page": 1,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 2,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 3,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 4,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 5,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 6,
+        "width": 612.0,
+        "height": 792.0
+      }
+    ],
+    "page_count": 6,
+    "draft": true,
+    "overfull_boxes": 0,
+    "undefined_references": false,
+    "visual_qa": "passed: all six final rendered pages inspected; no overlap or clipping",
+    "submission_ready": false,
+    "reason": "Core, SIFT and extension evidence incomplete; protocol-version coverage reconciliation and final author review required",
+    "pdf_sha256": "adaae8573f35132947d877e344285f519335d0db39793c59f18f0d1ce2525da8",
+    "metadata_author": ""
+  }
+}

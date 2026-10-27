@@ -30,6 +30,9 @@ class TrendDetector:
         self.slope_threshold = slope_threshold
         self._history: deque[float] = deque(maxlen=window_size)
 
+    def reset(self) -> None:
+        self._history.clear()
+
     def observe(self, score: float) -> DetectionResult:
         self._history.append(float(score))
         if len(self._history) < self.window_size:
@@ -43,3 +46,15 @@ class TrendDetector:
         if slope < -self.slope_threshold:
             return DetectionResult(True, "negative_trend", relative_drop, slope)
         return DetectionResult(False, None, relative_drop, slope)
+
+
+class AdjacentDetector(TrendDetector):
+    def observe(self, score: float) -> DetectionResult:
+        previous = self._history[-1] if self._history else None
+        self._history.append(float(score))
+        if previous is None:
+            return DetectionResult(False, None, 0.0, 0.0)
+        drop = (previous - score) / max(abs(previous), 1e-12)
+        return DetectionResult(drop > self.relative_drop_threshold,
+                               "adjacent_drop" if drop > self.relative_drop_threshold else None,
+                               float(drop), float(score - previous))
